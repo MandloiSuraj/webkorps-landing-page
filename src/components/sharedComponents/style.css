@@ -1,0 +1,76 @@
+.icon-image {
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+  transform: translateY(0);
+}
+
+/* Slide down the icon on hover and hide it */
+.hexagon:hover .icon-image {
+  transform: translateY(15px) rotate(15deg); /* Move down and rotate */
+  opacity: 0; /* Hide the icon */
+}
+
+/* Text Styles */
+.icon-text {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #333; /* Change this to suit your design */
+  opacity: 0; /* Start hidden */
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+  transform: translateY(-15px); /* Start above */
+}
+
+/* Show the text on hover with sliding effect */
+.hexagon:hover .icon-text {
+  opacity: 1; /* Show the text */
+  transform: translateY(0); /* Move to original position */
+  transition-delay: 0.1s; /* Delay for staggered appearance */
+  color: #000000; /* Change text color on hover */
+}
+
+.hexabody {
+  align-items: center;
+  background-color: white; /* You can change this to any background color you prefer */
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.clip-triangle {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Reverse triangle for the white part */
+.clip-triangle-reverse {
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.grayscale-image {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.grayscale-image:hover {
+  filter: grayscale(0%);
+  transition: filter 0.3s ease-in-out;
+}
+
+
+.custom-gradient-bar {
+  background: linear-gradient(90deg, rgba(24, 135, 201, 0) 19.38%, #1887C9 100%);
+  height: 9px; /* Set to the same thickness as the previous border */
+  border-radius: 30px; /* Adjust for desired rounding */
+}
+
+ul.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust z-index to ensure it overlaps */
+  background-color: white; /* To ensure background color stays */
+  box-shadow: 0 4px 2px -2px gray; /* Optional: adds a shadow for better visibility */
+}
+/* .hexagon-container {
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+}
+ */

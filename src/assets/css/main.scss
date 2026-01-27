@@ -1,0 +1,38 @@
+.Clients-feedback {
+    height: 665px;
+}
+.banner-section{
+    .bg-banner{
+        background: #001833;
+        height: 330px;
+        padding-top: 50px;
+    }
+}
+.job-section-blog{
+
+    .job-details{
+        height: auto;
+        background: #F9F9F9;
+        width: 400px;
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .items-name{
+        display: inline;
+        float: left;
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 12px;
+        line-height: 1rem;
+    }
+    ul,ol{
+        list-style: unset;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 2rem;
+    }
+}

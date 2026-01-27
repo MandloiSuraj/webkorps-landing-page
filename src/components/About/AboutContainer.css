@@ -1,0 +1,9 @@
+.custom-background {
+    background-image: url('/Circle.png');
+    background-size: cover; /* Adjust to 'contain' if you prefer the image to be contained */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+   
+  }
+  
