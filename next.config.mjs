@@ -54,11 +54,6 @@ const nextConfig = {
       },
     ];
   },
-  turbopack: {
-    resolveAlias: {
-      "react-router-dom": path.join(__dirname, "src", "lib", "react-router-dom.js"),
-    },
-  },
   webpack: (config) => {
     config.resolve.alias["react-router-dom"] = path.join(__dirname, "src", "lib", "react-router-dom.js");
     return config;
