@@ -332,7 +332,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Streamline supply chain operations, enable real-time tracking, and optimize route planning with our RoR-powered logistics solutions for improved efficiency and cost-effectiveness.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -373,7 +373,7 @@ const TechData = [
                     "id": "09",
                     "title": "Fitness and Wellness",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/fitness-and-welness.webp",
-                     "alt": "fitness and welness",
+                    "alt": "fitness and welness",
                     "descriptions": "Design personalized workout plans, monitor progress, and offer nutrition guidance through our fitness and wellness solutions developed using Ruby on Rails.",
                 },
                 {
@@ -381,7 +381,7 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "Enhance farm management, supply chain monitoring, and resource optimization with RoR-powered agricultural solutions that boost productivity.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
@@ -395,7 +395,7 @@ const TechData = [
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "Create immersive, feature-rich gaming experiences using RoR-based solutions capable of supporting real-time multiplayer functionality and interactive gameplay.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 
@@ -877,7 +877,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Optimize supply chain management, real-time tracking, and route planning with Java-powered logistics solutions for improved operational efficiency and cost savings.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -925,21 +925,21 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "Optimize farm management, improve supply chain tracking, and enhance productivity with Java-based agricultural solutions to streamline operations and maximize output.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
                     "title": "Entertainment",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/entertainment.webp",
                     "descriptions": "Develop high-performance content streaming and interactive gaming platforms with Java entertainment solutions, offering seamless, engaging user experiences.",
-                     "alt": "Entertainment"
+                    "alt": "Entertainment"
                 },
                 {
                     "id": "12",
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "Create immersive, real-time multiplayer games using Java game development solutions for enhanced interactive experiences and optimal gameplay performance.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 
@@ -1388,7 +1388,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Elevate your supply chain efficiency through real-time fleet tracking, inventory automation, and AI-driven route optimization. Experience faster deliveries and substantial cost savings as you streamline your logistics operations.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -1435,21 +1435,21 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "Revolutionize farming with our smart solutions featuring real-time crop monitoring, AI-driven analytics, and automated resource management. Boost agricultural productivity and efficiency with our transformative technologies.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
                     "title": "Entertainment",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/entertainment.webp",
                     "descriptions": "Step into the future of entertainment with our next-gen applications that offer live streaming, interactive content, and immersive social engagement. We enhance the digital media experience for every user.",
-                     "alt": "Entertainment"
+                    "alt": "Entertainment"
                 },
                 {
                     "id": "12",
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "Immerse yourself in high-performance Android gaming applications that offer real-time multiplayer capabilities, AR/VR integration, and dynamic gameplay. We deliver an unforgettable gaming experience that captivates players.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 
@@ -1576,7 +1576,7 @@ const TechData = [
 
     {
         id: 'ios',
-        metaTitle: " iOS App Development Company",
+        metaTitle: "iOS App Development Company",
         metaDescription: "Looking for a trusted iOS app development company? Get custom iOS app development services to build high-quality, scalable, and user-friendly apps. Contact us today!",
         metaUrl: "https://www.webkorps.com/technology/ios",
         OGTitle: "iOS App Development Company",
@@ -1940,7 +1940,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Optimize supply chain operations with iOS-powered logistics apps, offering real-time fleet tracking, automated dispatch, and AI-driven route optimization, ensuring cost savings and operational transparency.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -1988,21 +1988,21 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "Boost agricultural efficiency with smart iOS farming solutions, integrating real-time crop monitoring, weather forecasting, and AI-powered resource management for increased productivity and sustainability.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
                     "title": "Entertainment",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/entertainment.webp",
                     "descriptions": "Create next-gen iOS entertainment platforms, supporting high-performance content streaming, interactive gaming, and AI-driven recommendations for engaging digital experiences.",
-                     "alt": "Entertainment"
+                    "alt": "Entertainment"
                 },
                 {
                     "id": "12",
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "Develop immersive iOS gaming applications featuring real-time multiplayer support, AR/VR integration, and monetization strategies, delivering exceptional gameplay and engagement.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 
@@ -2479,7 +2479,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Improve supply chain management, fleet tracking, and operational efficiency with our .NET-based logistics solutions, ensuring real-time monitoring and cost reduction.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -2527,21 +2527,21 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "Improve farm management, predictive analytics, and resource optimization with .NET agricultural solutions, driving efficiency and sustainability in agritech.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
                     "title": "Entertainment",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/entertainment.webp",
                     "descriptions": "Create scalable streaming platforms, interactive applications, and digital media solutions with our high-performance .NET entertainment development services.",
-                     "alt": "Entertainment"
+                    "alt": "Entertainment"
                 },
                 {
                     "id": "12",
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "Develop immersive, real-time multiplayer games and cloud-based gaming solutions with .NET gaming development, ensuring high performance and seamless user experiences.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 
@@ -3028,7 +3028,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Optimize supply chain efficiency with our Python-powered logistics solutions, enabling real-time tracking, automated route planning, and predictive analytics for smooth operations.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -3076,21 +3076,21 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "Boost farming efficiency with our Python IoT agriculture solutions, enabling automated crop monitoring, resource optimization, and predictive analytics for smarter farming.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
                     "title": "Entertainment",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/entertainment.webp",
                     "descriptions": "Create immersive entertainment platforms with Python-based streaming solutions, offering AI-driven content recommendations and seamless user experiences.",
-                     "alt": "Entertainment"
+                    "alt": "Entertainment"
                 },
                 {
                     "id": "12",
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "Build high-performance gaming applications with Python game development, featuring real-time multiplayer functionality, AI-driven gameplay, and advanced graphics rendering.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 
@@ -3549,7 +3549,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Enhance logistics and transportation efficiency with React Native logistics solutions, offering real-time tracking, route optimization, and seamless supply chain management.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -3597,21 +3597,21 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "Increase farming productivity with React Native agriculture solutions, offering supply chain management, resource optimization, and real-time data insights.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
                     "title": "Entertainment",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/entertainment.webp",
                     "descriptions": "Revolutionize entertainment platforms with React Native entertainment applications, offering seamless content streaming, social networking, and user engagement features.",
-                     "alt": "Entertainment"
+                    "alt": "Entertainment"
                 },
                 {
                     "id": "12",
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "Create immersive and high-performance gaming experiences with React Native gaming applications, supporting real-time multiplayer gameplay, interactive content, and seamless navigation.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 
@@ -4109,7 +4109,7 @@ const TechData = [
                     "title": "Logistics",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/logistics.webp",
                     "descriptions": "Our PHP logistics applications feature real-time tracking, AI-powered route optimization, and automated supply chain management to ensure seamless operations and cost efficiency.",
-                     "alt": "Logistics"
+                    "alt": "Logistics"
                 },
                 {
                     "id": "04",
@@ -4157,21 +4157,21 @@ const TechData = [
                     "title": "Agriculture",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/agriculture.webp",
                     "descriptions": "We deliver smart PHP-based agriculture solutions for automated farm management, IoT-driven monitoring, weather analytics, and supply chain optimization to improve productivity and sustainability.",
-                     "alt": "Agriculture"
+                    "alt": "Agriculture"
                 },
                 {
                     "id": "11",
                     "title": "Entertainment",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/entertainment.webp",
                     "descriptions": "Our PHP entertainment platforms support seamless video streaming, content distribution, interactive media, and AI-driven recommendations for an engaging and immersive user experience.",
-                     "alt": "Entertainment"
+                    "alt": "Entertainment"
                 },
                 {
                     "id": "12",
                     "title": "Gaming",
                     "image": "https://webkorps-app.s3.us-east-1.amazonaws.com/gaming.webp",
                     "descriptions": "We develop high-performance PHP gaming solutions with real-time multiplayer functionality, secure in-game transactions, AI-powered game mechanics, and cloud-based scalability for an unparalleled gaming experience.",
-                     "alt": "Gaming"
+                    "alt": "Gaming"
                 }
             ]
 

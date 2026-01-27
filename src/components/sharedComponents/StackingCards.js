@@ -20,7 +20,7 @@ const StakingCard = ({ heading, description, features, image }) => {
                             height="600"
                             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                             loading="lazy"
-                            src={image}
+                            src={image?.src || image}
                             alt="Healthcare Transformation"
                             className="w-full ipad-pro:w-[85%] xl:w-[85%]  rounded-lg shadow-custom-lg"
                         />

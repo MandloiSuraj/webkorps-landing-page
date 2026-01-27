@@ -18,6 +18,16 @@ export const ServiceCard = ({ icon, title, description }) => {
             alt="icon"
             className="w-12 h-12 transition duration-500 ease-in-out group-hover:brightness-0 group-hover:invert"
           />
+        ) : icon && icon.src ? (
+          <img
+            width="800"
+            height="600"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            loading="lazy"
+            src={icon.src}
+            alt="icon"
+            className="w-12 h-12 transition duration-500 ease-in-out group-hover:brightness-0 group-hover:invert"
+          />
         ) : (
           <span className="text-4xl">{String(icon)}</span>
         )}
@@ -43,8 +53,8 @@ export const BenefitCard = ({ icon, title, description, animation, width }) => {
   return (
     <motion.div
       className={`flex flex-col items-center md:items-start border-yellow-400 border-[0.001px] p-[8px] pl-[14px] pt-[20px] pb-[20px] rounded-lg shadow-md ${width === '23.5%'
-          ? 'xl:w-[23.5%] lg:w-[48%] md:w-[48%] sm:w-[48%]'
-          : `w-[${width}]`
+        ? 'xl:w-[23.5%] lg:w-[48%] md:w-[48%] sm:w-[48%]'
+        : `w-[${width}]`
         }`}
       data-aos={animation}
       initial={{ y: 20 }}
@@ -56,6 +66,12 @@ export const BenefitCard = ({ icon, title, description, animation, width }) => {
         {typeof icon === 'string' && isImage(icon) ? (
           <img
             src={icon}
+            alt="icon"
+            className="w-12 h-12 transition duration-500 ease-in-out group-hover:brightness-0 group-hover:invert"
+          />
+        ) : icon && icon.src ? (
+          <img
+            src={icon.src}
             alt="icon"
             className="w-12 h-12 transition duration-500 ease-in-out group-hover:brightness-0 group-hover:invert"
           />

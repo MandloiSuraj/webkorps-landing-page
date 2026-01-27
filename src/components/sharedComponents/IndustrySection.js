@@ -6,23 +6,23 @@ const IndustrySection = ({ title, description, industries, centerHeading, bgColo
 
     const scrollRef = useRef(null);
     const awardsLoop = [...industries, ...industries];
-const [hoveredCard, setHoveredCard] = useState(null);
- 
-  const handleScroll = () => {
-    if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
-      scrollRef.current.scrollLeft = 0;
-    }
-  };
+    const [hoveredCard, setHoveredCard] = useState(null);
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-
-    return () => {
-      scrollContainer.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+            scrollRef.current.scrollLeft = 0;
+        }
     };
-  }, []);
+
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+
+        scrollContainer.addEventListener('scroll', handleScroll);
+
+        return () => {
+            scrollContainer.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     useEffect(() => {
         let scrollInterval;
 
@@ -109,7 +109,7 @@ const [hoveredCard, setHoveredCard] = useState(null);
                                 height="600"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                                 loading="lazy"
-                                src={card.image}
+                                src={card.image?.src || card.image}
                                 alt={card.alt}
                                 className="w-full h-full "
                             />

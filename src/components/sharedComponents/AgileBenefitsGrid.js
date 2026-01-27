@@ -46,6 +46,16 @@ const AgileBenefitsGrid = ({ benefits }) => {
                                 alt="icon"
                                 className="w-12 h-12 transition duration-500 ease-in-out group-hover:brightness-0 group-hover:invert"
                             />
+                        ) : benefit.icon && benefit.icon.src ? (
+                            <img
+                                width="800"
+                                height="600"
+                                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                loading="lazy"
+                                src={benefit.icon.src}
+                                alt="icon"
+                                className="w-12 h-12 transition duration-500 ease-in-out group-hover:brightness-0 group-hover:invert"
+                            />
                         ) : (
                             <span className="text-4xl">{String(benefit.icon)}</span>
                         )}

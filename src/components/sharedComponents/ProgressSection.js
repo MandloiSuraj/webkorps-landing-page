@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProgressSection = ({ title, description, steps1, centerHeading, bgColor, processImage ,ProcessAlt}) => {
+const ProgressSection = ({ title, description, steps1, centerHeading, bgColor, processImage, ProcessAlt }) => {
     return (
         <div className={`py-[4rem] ${bgColor}  font-inter `}>
             <div className="flex flex-col overflow-hidden md:flex-col ipad-pro:flex-row xl:flex-row items-center px-[3%] xl:px-[30px] ipad-pro:px-[30px] justify-center text-center lg:text-left  mx-[7%] md:mx-[7%] xl:mx-[50px] ipad-pro:mx-[50px] justify-center p-12 shadow-custom-lg rounded-[20px] bg-white ">
@@ -46,7 +46,7 @@ const ProgressSection = ({ title, description, steps1, centerHeading, bgColor, p
                     <div className="relative w-[85%] mx-auto flex justify-center items-center mt-[3rem] xl:block hidden" data-aos="fade-up">
 
                         <img
-                            src={processImage ? processImage : "https://webkorps-app.s3.us-east-1.amazonaws.com/process.svg"}
+                            src={processImage?.src || processImage || "https://webkorps-app.s3.us-east-1.amazonaws.com/process.svg"}
                             alt={processImage ? ProcessAlt : "process"}
                             className="w-full"
                             width="800"
@@ -77,7 +77,7 @@ const ProgressSection = ({ title, description, steps1, centerHeading, bgColor, p
 
                         {steps1.map((step, index) => (
                             <div key={index} className=" p-4 flex flex-col items-center text-center bg-white shadow-custom rounded-lg border-[0.8px] border-neutral-500 border-opacity-40">
-                                <img src={step.icon} alt={step.alt} className="w-16 h-16"
+                                <img src={step.icon?.src || step.icon} alt={step.alt} className="w-16 h-16"
                                     width="800"
                                     height="600"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"

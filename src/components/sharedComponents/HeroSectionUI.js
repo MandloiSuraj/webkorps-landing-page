@@ -31,7 +31,7 @@ function HeroSectionUI({
                     height="600"
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     loading="lazy"
-                    src={image}
+                    src={image?.src || image}
                     alt={imageAlt}
                     className="w-full h-full object-cover"
                 />
@@ -71,7 +71,7 @@ function HeroSectionUI({
                                         height="600"
                                         sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                                         loading="lazy"
-                                        src={rightImageSrc}
+                                        src={rightImageSrc?.src || rightImageSrc}
                                         alt="Updated Contact Us"
                                         className="w-full h-[215px] xl:h-auto ipad-pro:h-auto  md:max-h-[350px] object-contain"
                                     />

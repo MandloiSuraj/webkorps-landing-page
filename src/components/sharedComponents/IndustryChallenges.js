@@ -122,13 +122,30 @@ export function OfferingsSection({ tabsData, description, heading, bgColor, Card
 
 
 function Card({ icon, title, description, bgColor, features }) {
+  const isImage = (icon) =>
+    typeof icon === 'string' && /\.(jpg|jpeg|png|svg|webp|gif)$/i.test(icon);
+
   return (
     <div
       className={`flex flex-col items-start group relative text-left justify-start pt-[15px] px-[1rem] pb-[15px] border-[0.8px] border-neutral-500 border-opacity-40 ${bgColor} transition-all duration-500 ease-in-out hover:shadow-custom-lg shadow-lg rounded-[20px_20px] ${features ? "w-[23.5%] min-w-[278px] max-w-[378px]" : ""}  box-border h-auto`}
     >
       <div className="flex flex-col">
         <div className={`text-3xl mb-2 ${bgColor === 'bg-white' ? 'text-[#061C3D]' : 'text-white'}`}>
-          {icon}
+          {typeof icon === 'string' && isImage(icon) ? (
+            <img
+              src={icon}
+              alt="icon"
+              className="w-12 h-12"
+            />
+          ) : icon && icon.src ? (
+            <img
+              src={icon.src}
+              alt="icon"
+              className="w-12 h-12"
+            />
+          ) : (
+            icon
+          )}
         </div>
         <h3
           className={`font-inter text-[0.8rem] xl:text-[1.18rem] ipad-pro:text-[0.9rem] md:text-[1rem] leading-[1.2rem] font-semibold mb-2 ${bgColor === 'bg-white' ? 'text-[#061C3D]' : 'text-white'} w-[105%]`}
@@ -140,7 +157,6 @@ function Card({ icon, title, description, bgColor, features }) {
         {description}
       </p>
     </div>
-
   );
 }
 

@@ -59,10 +59,10 @@ const Technologies = ({ heading, description, techStack = [], centerHeading }) =
                 { name: 'Flutter', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/flutter.svg", altText: 'flutter' },
                 { name: 'Ionic', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/ionic.svg", altText: 'ionic' },
                 { name: 'Xamarin', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/Xamarin.svg", altText: 'xamarin' },
-                { name: 'React Native', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/react.svg",altText: 'react' },
+                { name: 'React Native', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/react.svg", altText: 'react' },
                 { name: 'Swift', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/swift.svg", altText: 'swift' },
                 { name: 'PWA', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/pwa.svg", altText: 'pwa' },
-                { name: 'Cordova', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/apache-cordova.svg",altText: 'Apache Cordova' },
+                { name: 'Cordova', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/apache-cordova.svg", altText: 'Apache Cordova' },
             ],
             icon: faMobileAlt
         },
@@ -74,7 +74,7 @@ const Technologies = ({ heading, description, techStack = [], centerHeading }) =
                 { name: 'Solar2D', logo: 'https://webkorps-app.s3.us-east-1.amazonaws.com/vue-js.svg', altText: 'vue-js' },
                 { name: 'Android Studio', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/Android-Studio.svg", altText: 'android-studio' },
                 { name: 'Xcode', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/Xcode.svg", altText: 'xcode' },
-                { name: 'iOS SDK', logo: 'https://webkorps-app.s3.us-east-1.amazonaws.com/Xamarin.svg',  altText: 'xamarin' }
+                { name: 'iOS SDK', logo: 'https://webkorps-app.s3.us-east-1.amazonaws.com/Xamarin.svg', altText: 'xamarin' }
             ],
             icon: faTools
         },
@@ -123,7 +123,7 @@ const Technologies = ({ heading, description, techStack = [], centerHeading }) =
                 { name: 'Live and Video Streaming', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/game.png", altText: 'game' },
                 { name: 'Chat Functionalities', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/chat.png", altText: 'chat-functionalities' },
                 { name: 'Audio and Video Services', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/audio-and-video.png", altText: 'audio-video-services' },
-                { name: 'In-App Purchases', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/Google-Cloud.svg",altText: 'google cloud' },
+                { name: 'In-App Purchases', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/Google-Cloud.svg", altText: 'google cloud' },
                 { name: 'AR and VR Integration', logo: "https://webkorps-app.s3.us-east-1.amazonaws.com/vr.png", altText: 'ar-vr-integration' }
             ],
             icon: faPlug
@@ -134,22 +134,22 @@ const Technologies = ({ heading, description, techStack = [], centerHeading }) =
     const scrollRef = useRef(null);
     const awardsLoop = [...defaultTechStack, ...defaultTechStack];
 
- 
-  const handleScroll = () => {
-    if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
-      scrollRef.current.scrollLeft = 0;
-    }
-  };
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-
-    return () => {
-      scrollContainer.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+            scrollRef.current.scrollLeft = 0;
+        }
     };
-  }, []);
+
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+
+        scrollContainer.addEventListener('scroll', handleScroll);
+
+        return () => {
+            scrollContainer.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     useEffect(() => {
         let scrollInterval;
 
@@ -261,10 +261,10 @@ const Technologies = ({ heading, description, techStack = [], centerHeading }) =
                                             key={tech.name}
                                             className="flex flex-col items-center justify-center text-center p-2 w-full"
                                         >
-                                            {tech.logo && <img  width="800"
-                  height="600"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  loading="lazy" src={tech.logo} alt={tech.altText} className="w-12 h-12" />}
+                                            {tech.logo && <img width="800"
+                                                height="600"
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                                loading="lazy" src={tech.logo?.src || tech.logo} alt={tech.altText} className="w-12 h-12" />}
                                             <span className="text-[0.825rem] w-full mt-[8px]">{tech.name}</span>
                                         </li>
                                     </ul>

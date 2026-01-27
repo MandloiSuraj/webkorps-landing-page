@@ -1,10 +1,10 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
-import "react-quill/dist/quill.snow.css";
+import "react-quill-new/dist/quill.snow.css";
 import Header from "../sharedComponents/Header";
 import Footer from '../sharedComponents/footer';
 import { Link } from 'react-router-dom';
-const ReactQuill = React.lazy(() => import('react-quill'), { ssr: true });
+const ReactQuill = React.lazy(() => import('react-quill-new'), { ssr: true });
 
 export default function JobOpening() {
   const { id } = useParams();

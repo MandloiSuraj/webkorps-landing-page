@@ -69,7 +69,7 @@ const TechnologyPage = ({
                                 height="600"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                                 loading="lazy"
-                                src={overviewData?.image}
+                                src={overviewData?.image?.src || overviewData?.image}
                                 alt="leading-web-development-company"
                                 className="rounded-lg shadow-md w-full lg:w-[385px] lg:h-[415px] max-w-md"
                                 data-aos="fade-left"
@@ -129,7 +129,7 @@ const TechnologyPage = ({
                                             height="600"
                                             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                                             loading="lazy"
-                                            src={ChooseImage}
+                                            src={ChooseImage?.src || ChooseImage}
                                             alt="Main"
                                             className="w-full h-auto rounded-[20px] mb-[30px] object-contain"
                                         />
