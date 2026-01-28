@@ -18,38 +18,41 @@ const Card = ({ image, name, position, linkedIn, altText }) => {
   const hasLinkedIn = linkedIn?.trim().length > 0;
 
   return (
-    <div className="bg-white overflow-hidden text-center transition-all duration-300 shadow-2xl group w-full rounded-[25px]">
-      {/* Profile Image */}
-      <div className="p-4 pb-0">
-        <img
-          width="800"
-          height="600"
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          loading="lazy"
-          className="w-[16rem] h-[16rem] mx-auto rounded-2xl object-fill shadow-md"
-          src={image}
-          alt={altText || name}
-        />
+    <div className="bg-white overflow-hidden text-center transition-all duration-300 shadow-2xl group w-full rounded-[25px] flex flex-col">
+      {/* Profile Image Container with Equal Padding */}
+      <div className="p-5">
+        <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-md">
+          <img
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src={image}
+            alt={altText || name}
+            width="400"
+            height="400"
+          />
+        </div>
       </div>
 
-      <div className="bg-white p-4 pt-2">
-        <h3 className="text-lg font-bold text-gray-900">{name}</h3>
-        <p className="text-gray-500 text-sm">{position}</p>
+      <div className="bg-white px-5 pb-5 pt-0 flex-grow flex flex-col justify-center">
+        <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{name}</h3>
+        <p className="text-gray-500 text-sm line-clamp-2 min-h-[40px] flex items-center justify-center">
+          {position}
+        </p>
 
-        <div className="flex justify-center space-x-3 mt-3">
+        <div className="flex justify-center mt-3">
           {hasLinkedIn ? (
             <a
               href={linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 hover:text-blue-600 transition-colors"
               aria-label={`${name} LinkedIn`}
             >
               <LinkedInIcon />
             </a>
           ) : (
             <span
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-400 cursor-not-allowed"
               title="LinkedIn not available"
             >
               <LinkedInIcon />

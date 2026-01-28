@@ -6,7 +6,7 @@ export const ServiceCard = ({ icon, title, description }) => {
     typeof icon === 'string' && /\.(jpg|jpeg|png|svg|webp|gif)$/i.test(icon);
 
   return (
-    <div className="flex flex-col items-center Solutions-boxs group relative shadow-custom border-[0.8px] border-neutral-500 border-opacity-40 bg-white transition-all duration-500 ease-in-out hover:bg-[#061C3D] hover:text-white hover:rounded-[28px_28px] group-hover:text-white w-[23.5%] min-w-[278px] max-w-[378px] box-border">
+    <div className="flex flex-col items-center Solutions-boxs group relative shadow-custom border-[0.8px] border-neutral-500 border-opacity-40 bg-white transition-all duration-500 ease-in-out hover:bg-[#061C3D] hover:text-white hover:border-transparent group-hover:text-white w-[23.5%] min-w-[278px] max-w-[378px] box-border">
       <div className="text-3xl mb-4 group-hover:text-white text-[#061C3D]">
         {typeof icon === 'string' && isImage(icon) ? (
           <img

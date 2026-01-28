@@ -291,10 +291,10 @@ const AboutContainer = () => {
             viewport={{ once: true }}
           >
             {/* Image Section */}
-            <div className="w-full xl:w-1/3 flex justify-center xl:justify-start relative max-h-[450px]">
-              <div className="relative w-full max-w-[320px] md:max-w-[400px] xl:max-w-[450px]">
+            <div className="w-full xl:w-[40%] flex justify-center xl:justify-start relative">
+              <div className="relative w-full max-w-[450px]">
                 <img
-                  className="w-[28rem] h-[28rem]  rounded-lg shadow-lg"
+                  className="w-full h-auto aspect-square rounded-lg shadow-lg"
                   src="https://webkorps-app.s3.us-east-1.amazonaws.com/vision-image.jpg"
                   alt="Our vision"
                   sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -304,7 +304,7 @@ const AboutContainer = () => {
                 />
                 {/* Overlay Image - Fixed Positioning for Small Screens */}
                 <img
-                  className="w-[60%] md:w-[50%] h-auto  absolute top-[22%] right-[20%] md:right-[-5%] xl:right-[-10%] rounded-lg shadow-lg border-4 border-white"
+                  className="w-[60%] md:w-[50%] h-auto absolute top-[22%] right-[-5%] xl:right-[-8%] rounded-lg shadow-lg border-4 border-white"
                   src="/assets/our-vision-image.jpg"
                   alt="our-vision-image"
                   sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -316,7 +316,7 @@ const AboutContainer = () => {
             </div>
 
             {/* Text Content */}
-            <motion.div className="w-full xl:w-2/3 text-center xl:text-left" variants={fadeInFromBottom}>
+            <motion.div className="w-full xl:w-[60%] text-center xl:text-left" variants={fadeInFromBottom}>
               <h2 className="text-[1.5625rem] xl:text-[2.1875rem] ipad-pro:text-[1.875rem] md:text-[2.1875rem] text-black font-inter font-bold leading-snug">
                 Our Vision
               </h2>
@@ -357,15 +357,15 @@ const AboutContainer = () => {
         {/* Mission Section */}
         <section className="flex justify-center bg-cover bg-[#11608F] bg-no-repeat py-[4rem] px-6 xl:px-12">
           <motion.div
-            className="w-full bg-white border border-gray-300 rounded-[40px] shadow-custom-lg px-[3%] xl:px-[30px] ipad-pro:px-[30px] p-12 flex flex-col xl:flex-row-reverse gap-12"
+            className="w-full bg-white border border-gray-300 rounded-[40px] shadow-custom-lg px-[3%] xl:px-[30px] ipad-pro:px-[30px] p-12 flex flex-col xl:flex-row-reverse gap-6 xl:gap-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="w-full xl:w-1/3 flex justify-center xl:justify-end relative max-h-[500px] overflow-visible">
-              <div className="relative">
+            <div className="w-full xl:w-[40%] flex justify-center xl:justify-end relative overflow-visible">
+              <div className="relative w-full max-w-[450px]">
                 <img
-                  className="w-[28rem] h-[28rem]  rounded-lg shadow-lg"
+                  className="w-full h-auto aspect-square rounded-lg shadow-lg"
                   src="/assets/our-mission.jpg"
                   alt="Our mission"
                   width="800"
@@ -375,7 +375,7 @@ const AboutContainer = () => {
 
                 />
                 <img
-                  className="w-[70%] md:w-[60%] xl:w-[50%] h-auto  absolute top-[20%] left-[15%] md:left-[-5%] xl:left-[-10%] rounded-lg shadow-lg border-4 border-white"
+                  className="w-[70%] md:w-[60%] xl:w-[50%] h-auto absolute top-[20%] left-[-5%] xl:left-[-8%] rounded-lg shadow-lg border-4 border-white"
                   src="https://webkorps-app.s3.us-east-1.amazonaws.com/our-misson.jpg"
                   alt="our-misson"
                   width="800"
@@ -387,7 +387,7 @@ const AboutContainer = () => {
             </div>
 
 
-            <motion.div className="w-full xl:w-2/3 text-center xl:text-left" variants={fadeInFromBottom}>
+            <motion.div className="w-full xl:w-[60%] text-center xl:text-left" variants={fadeInFromBottom}>
               <h2 className="font-inter text-[1.5625rem] xl:text-[2.1875rem] ipad-pro:text-[1.875rem] md:text-[2.1875rem]  text-black font-bold leading-snug ">
                 Our Mission
               </h2>
