@@ -1,9 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import TeamImgWeb from "../../assets/images/webkorps-team.jpg";
-import TeamImgMobile from "../../assets/images/webkorps.jpg";
-
-import ajay_thakur from "../../assets/images/ajay-thakur-head-of-recruitment.jpg";
 const LinkedInIcon = () => (
   <svg
     width="20"
@@ -76,7 +72,7 @@ const LeadersCardContainer = () => {
     { image: "https://webkorps-app.s3.us-east-1.amazonaws.com/ankur-singhal-chief-growth-officer.jpg", name: "Ankur Singhal", position: "Chief Growth Officer", linkedIn: "", altText: 'ankur-singhal-chief-growth-officer' },
     { image: "https://webkorps-app.s3.us-east-1.amazonaws.com/swapnil-bhosle-vice-president-of-engineering.jpg", name: "Swapnil Bhosle", position: "Vice President of Engineering", linkedIn: "https://www.linkedin.com/in/swapnil-bhosale-7534b4138/", altText: 'swapnil-bhosle-vice-president-of-engineering' },
     { image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/mehul-shah-head-of-operations-pune.jpg', name: "Mehul Shah", position: "Head of Operations (Pune)", linkedIn: "https://www.linkedin.com/in/mehul-s-01837146/", altText: 'mehul-shah-head-of-operations-pune' },
-    { image: ajay_thakur, name: "Ajay Thakur", position: "Head Of Recruitment", linkedIn: "https://www.linkedin.com/in/ajay-thakur-535929226/", altText: 'ajay-thakur-head-of-recruitment' },
+    { image: "/assets/images/ajay-thakur-head-of-recruitment.jpg", name: "Ajay Thakur", position: "Head Of Recruitment", linkedIn: "https://www.linkedin.com/in/ajay-thakur-535929226/", altText: 'ajay-thakur-head-of-recruitment' },
   ];
   const [years, setYears] = useState(0);
   const [projects, setProjects] = useState(0);
@@ -123,7 +119,7 @@ const LeadersCardContainer = () => {
     };
   }, [hasCounted]);
   const isMobileOrTablet = typeof window !== 'undefined' && window.innerWidth <= 1024;
-  const TeamImg = !isMobileOrTablet ? TeamImgWeb : TeamImgMobile
+  const TeamImg = !isMobileOrTablet ? "/assets/images/webkorps-team.jpg" : "/assets/images/webkorps.jpg"
   return (
     <div className="content text-center items-center border border-gray-300 rounded-[30px] shadow-custom-lg px-[3%] xl:px-[30px] ipad-pro:px-[30px] p-12 w-full bg-white">
       <section className="flex justify-center bg-cover bg-white bg-right bg-no-repeat w-full ">
@@ -132,7 +128,7 @@ const LeadersCardContainer = () => {
             <img
               className="w-full h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px]  rounded-lg shadow-lg"
               src={TeamImg}
-              alt="Construction Plans"
+              alt="Webkorps Leadership Team"
               width="800"
               height="600"
               sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"

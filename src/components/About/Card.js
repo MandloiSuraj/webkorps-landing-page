@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Icons1 from '../../assets/Icons/customer-centric-approach.svg'
-import Icons2 from '../../assets/Icons/innovation-and-excellence.svg'
-import Icons3 from '../../assets/Icons/integrity-and-transparency.svg'
-import Icons4 from '../../assets/Icons/collaboration-and- teamwork.svg'
-import Icons5 from '../../assets/Icons/continuous-learning-and-growth.svg'
-import Icons6 from '../../assets/Icons/commitment-to-quality.svg'
+const Icons1 = '/assets/Icons/customer-centric-approach.svg'
+const Icons2 = '/assets/Icons/innovation-and-excellence.svg'
+const Icons3 = '/assets/Icons/integrity-and-transparency.svg'
+const Icons4 = '/assets/Icons/collaboration-and- teamwork.svg'
+const Icons5 = '/assets/Icons/continuous-learning-and-growth.svg'
+const Icons6 = '/assets/Icons/commitment-to-quality.svg'
 
 const Card = ({ image, title, text, altText }) => {
   const [loaded, setLoaded] = useState(false);

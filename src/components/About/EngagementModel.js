@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Icons1 from '../../assets/Icons/fixed-cost.svg'
-import Icons2 from '../../assets/Icons/on-hire.svg'
-import Icons3 from '../../assets/Icons/hourly.svg'
-import Icons4 from '../../assets/Icons/bucket-hours.svg'
-import Icons5 from '../../assets/Icons/discovery-phase.svg'
+const Icons1 = '/assets/Icons/fixed-cost.svg'
+const Icons2 = '/assets/Icons/on-hire.svg'
+const Icons3 = '/assets/Icons/hourly.svg'
+const Icons4 = '/assets/Icons/bucket-hours.svg'
+const Icons5 = '/assets/Icons/discovery-phase.svg'
 const engagementModels = [
     {
         title: "Fixed Cost",

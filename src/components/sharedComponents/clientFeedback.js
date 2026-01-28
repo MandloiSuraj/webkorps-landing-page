@@ -49,7 +49,7 @@ function ClientFeedback({ title }) {
     { src: 'https://webkorps-app.s3.us-east-1.amazonaws.com/sophie-anderson.jpeg', alt: "Profile image of a person", position: "bottom-[-50px] left-[140px] md:bottom-[-50px] md:left-[60px]", size: "w-[50px] h-[50px] md:w-[75px] md:h-[75px]" },
   ];
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % feedbackTexts.length); 
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % feedbackTexts.length);
   };
 
   const handlePrevious = () => {
@@ -75,16 +75,16 @@ function ClientFeedback({ title }) {
           {/* Dotted Pattern */}
           <div className="relative">
             <div className="absolute top-[10px] right-[-40px] md:top-[20px] md:right-[-69px] text-gray-700 opacity-90 z-0">
-              <img  width="800"
-                  height="600"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  loading="lazy" alt="Dotted pattern" className="w-40 md:w-72 h-20 md:h-36" src={dotImage} />
+              <img width="800"
+                height="600"
+                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                loading="lazy" alt="Dotted pattern" className="w-40 md:w-72 h-20 md:h-36" src={dotImage?.src || dotImage} />
             </div>
             <div className="absolute bottom-[-16px] left-[-50px] md:bottom-[-26px] md:left-[-109px] text-gray-700 opacity-90 z-0">
-              <img  width="800"
-                  height="600"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  loading="lazy" alt="Dotted pattern" className="w-40 md:w-72 h-20 md:h-36" src={dotImage} />
+              <img width="800"
+                height="600"
+                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                loading="lazy" alt="Dotted pattern" className="w-40 md:w-72 h-20 md:h-36" src={dotImage?.src || dotImage} />
             </div>
 
             {/* Extra Cards for Depth Effect */}
@@ -109,7 +109,7 @@ function ClientFeedback({ title }) {
                 className={`absolute ${img.position}  floating transition-all duration-500 ease-in-out z-20`}
               >
                 <img
-                 width="800"
+                  width="800"
                   height="600"
                   sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   loading="lazy"

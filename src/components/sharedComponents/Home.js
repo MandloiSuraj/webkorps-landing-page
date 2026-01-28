@@ -21,7 +21,7 @@ import { OfferingsSection } from "./IndustryChallenges";
 import CompanyStatsSection from "./CompanyStatsSection";
 import AboutUsCard from "./AboutUsCard";
 import CTASection from "./CTASection";
-import websiteCTAImage from "../../assets/images/website-cta-5.jpg";
+const websiteCTAImage = "/assets/images/website-cta-5.jpg";
 import {
   faMobileScreenButton, // Mobile App Development
   faGlobe,              // Web Development
@@ -186,7 +186,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef(null);
- const partners = [
+  const partners = [
     {
       img: "https://webkorps-app.s3.us-east-1.amazonaws.com/adobe.webp",
       alt: "our official OEM Partners adobe",
@@ -199,7 +199,7 @@ const Home = () => {
       width: 100,
       height: 50,
     },
-    
+
     {
       img: "https://webkorps-app.s3.us-east-1.amazonaws.com/cisco.webp",
       alt: "our official OEM Partners cisco",
@@ -212,13 +212,13 @@ const Home = () => {
       width: 100,
       height: 50,
     },
-       {
+    {
       img: "https://webkorps-app.s3.us-east-1.amazonaws.com/hubspot.webp",
       alt: "our official OEM Partners hubspot",
       width: 100,
       height: 50,
     },
-     {
+    {
       img: "https://webkorps-app.s3.us-east-1.amazonaws.com/juniper.webp",
       alt: "our official OEM Partners juniper",
       width: 100,
@@ -260,20 +260,20 @@ const Home = () => {
       width: 100,
       height: 50,
     },
-     {
+    {
       img: "https://webkorps-app.s3.us-east-1.amazonaws.com/cloudsek.webp",
       alt: "our official OEM Partners cloudsek",
       width: 100,
       height: 50,
     },
-     {
+    {
       img: "https://webkorps-app.s3.us-east-1.amazonaws.com/aws.webp",
       alt: "our official OEM Partners aws",
       width: 100,
       height: 50,
     }
   ];
-    const partnersLoop = [...partners, ...partners];
+  const partnersLoop = [...partners, ...partners];
 
   const settings = {
     dots: false,

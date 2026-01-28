@@ -1,5 +1,4 @@
 import React from 'react';
-import WebkorpsImg from "../../assets/images/webkorps.jpg";
 
 const images = [
   {
@@ -19,20 +18,21 @@ const images = [
     alt: 'Webkorps team at cio event'
   },
   {
-    src: WebkorpsImg,
-    alt: 'Webkorps Logo'
+    src: 'https://webkorps-app.s3.us-east-1.amazonaws.com/webkorps-team-1.jpg',
+    alt: 'Webkorps Team'
   }
 ];
+
 
 const AboutUsCard = () => {
   return (
     <div className="grid grid-cols-4 grid-rows-3 gap-4  pt-0 xl:w-[45%] ipad-pro:w-[45%] w-full h-[45rem] ">
       {images.map((image, index) => (
         <div key={index} className={`relative items-center overflow-hidden  ${index === 0 ? 'col-span-2 row-span-2' : 'col-span-2 row-span-1'}`}>
-          <img  width="800"
-                  height="600"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  loading="lazy" src={image.src} alt={image.alt} className=" w-full h-full object-cover" />
+          <img width="800"
+            height="600"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            loading="lazy" src={image.src?.src || image.src} alt={image.alt} className=" w-full h-full object-cover" />
         </div>
       ))}
     </div>

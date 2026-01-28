@@ -12,7 +12,7 @@ const Card = ({ image, title, descriptions, tag, altText }) => {
          (max-width: 1280px) 50vw, 
          33vw" loading="lazy"
 
-          src={image}
+          src={image?.src || image}
           alt={altText}
           className="w-full h-[100%]  transition-transform duration-300 hover:scale-110"
         />
@@ -112,14 +112,14 @@ const CardContainer = () => {
   const mobcardsLoop = [...mobcards, ...mobcards];
   const handleScroll = () => {
     if (webScrollRef.current.scrollLeft <= webScrollRef.current.scrollWidth / 2) {
-      webScrollRef.current.scrollLeft =  webScrollRef.current.scrollWidth;
+      webScrollRef.current.scrollLeft = webScrollRef.current.scrollWidth;
     }
   };
-const handleMobScroll = () => {
-  if (mobScrollRef.current.scrollLeft >= mobScrollRef.current.scrollWidth / 2) {
-    mobScrollRef.current.scrollLeft = 0;
-  }
-};
+  const handleMobScroll = () => {
+    if (mobScrollRef.current.scrollLeft >= mobScrollRef.current.scrollWidth / 2) {
+      mobScrollRef.current.scrollLeft = 0;
+    }
+  };
 
   useEffect(() => {
     const scrollContainer = webScrollRef.current;
@@ -131,18 +131,18 @@ const handleMobScroll = () => {
     };
   }, [])
   useEffect(() => {
-  const mobContainer = mobScrollRef.current;
+    const mobContainer = mobScrollRef.current;
 
-  if (mobContainer) {
-    mobContainer.addEventListener('scroll', handleMobScroll);
-  }
-
-  return () => {
     if (mobContainer) {
-      mobContainer.removeEventListener('scroll', handleMobScroll);
+      mobContainer.addEventListener('scroll', handleMobScroll);
     }
-  };
-}, []);
+
+    return () => {
+      if (mobContainer) {
+        mobContainer.removeEventListener('scroll', handleMobScroll);
+      }
+    };
+  }, []);
   useEffect(() => {
     let webScrollInterval;
     let mobScrollInterval;
@@ -183,7 +183,7 @@ const handleMobScroll = () => {
       <div className="flex font-inter flex-col items-center overflow-hidden mx-[7%] md:mx-[7%] xl:mx-[50px] ipad-pro:mx-[50px] justify-center p-12 px-[3%] xl:px-[30px] ipad-pro:px-[30px] shadow-custom-lg rounded-[20px] bg-white">
 
         <div className="w-full text-center   " data-aos="fade-left">
-        <h2 className=" font-bold text-[1.5625rem] xl:text-[2.1875rem] ipad-pro:text-[1.875rem] md:text-[2.1875rem] leading-[2.45rem]  text-[#061C3D]"
+          <h2 className=" font-bold text-[1.5625rem] xl:text-[2.1875rem] ipad-pro:text-[1.875rem] md:text-[2.1875rem] leading-[2.45rem]  text-[#061C3D]"
             dangerouslySetInnerHTML={{ __html: 'Transforming Ideas into Reality' }}
           >
           </h2>

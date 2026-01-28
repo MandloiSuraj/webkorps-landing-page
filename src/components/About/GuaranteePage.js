@@ -8,15 +8,15 @@ import {
   faUsers,
   faBuilding,
 } from "@fortawesome/free-solid-svg-icons";
-import Icons1 from '../../assets/Icons/expert-talent-and-engineering-excellence.svg'
-import Icons2 from '../../assets/Icons/accurate-cost-estimation-and-budget-control.svg'
-import Icons3 from '../../assets/Icons/agile-and-adaptive-project-scoping.svg'
-import Icons4 from '../../assets/Icons/risk-driven-project-management.svg'
-import Icons5 from '../../assets/Icons/competence-based-team-selection.svg'
-import Icons6 from '../../assets/Icons/prevention-of-scope-creep.svg'
-import Icons7 from '../../assets/Icons/responsible-approach-to-deadlines.svg'
-import Icons8 from '../../assets/Icons/routine-reporting-and-transparency.svg'
-import Icons9 from '../../assets/Icons/centralized-knowledge-management.svg'
+const Icons1 = '/assets/Icons/expert-talent-and-engineering-excellence.svg'
+const Icons2 = '/assets/Icons/accurate-cost-estimation-and-budget-control.svg'
+const Icons3 = '/assets/Icons/agile-and-adaptive-project-scoping.svg'
+const Icons4 = '/assets/Icons/risk-driven-project-management.svg'
+const Icons5 = '/assets/Icons/competence-based-team-selection.svg'
+const Icons6 = '/assets/Icons/prevention-of-scope-creep.svg'
+const Icons7 = '/assets/Icons/responsible-approach-to-deadlines.svg'
+const Icons8 = '/assets/Icons/routine-reporting-and-transparency.svg'
+const Icons9 = '/assets/Icons/centralized-knowledge-management.svg'
 
 const guaranteePageModels = [
   {

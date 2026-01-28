@@ -9,7 +9,7 @@ const IndustrySection = ({ title, description, industries, centerHeading, bgColo
     const [hoveredCard, setHoveredCard] = useState(null);
 
     const handleScroll = () => {
-        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+        if (scrollRef.current && scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
             scrollRef.current.scrollLeft = 0;
         }
     };
@@ -17,10 +17,14 @@ const IndustrySection = ({ title, description, industries, centerHeading, bgColo
     useEffect(() => {
         const scrollContainer = scrollRef.current;
 
-        scrollContainer.addEventListener('scroll', handleScroll);
+        if (scrollContainer) {
+            scrollContainer.addEventListener('scroll', handleScroll);
+        }
 
         return () => {
-            scrollContainer.removeEventListener('scroll', handleScroll);
+            if (scrollContainer) {
+                scrollContainer.removeEventListener('scroll', handleScroll);
+            }
         };
     }, []);
     useEffect(() => {
