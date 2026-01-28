@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Header from "../sharedComponents/Header";
 import Footer from "../sharedComponents/footer";
@@ -7,10 +8,11 @@ import AOS from "aos";
 import { CoreValuesCards, Features, IndustryChallenges } from "../sharedComponents/IndustryChallenges";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
-import WebkorpsImg from "../../assets/images/webkorps.jpg";
+import websiteCTAImage2 from "../../assets/images/website-cta-6.jpg";
+import WebkorpsTeamImg from "../../assets/images/webkorps-team.jpg";
 import ReviewSlider from "./ReviewSlider";
 import FAQSection from "../sharedComponents/FAQSection";
-import websiteCTAImage from "../../assets/images/website-cta-6.jpg";
+import CTASection from "../sharedComponents/CTASection";
 
 
 export default function JoinUs() {
@@ -657,44 +659,15 @@ export default function JoinUs() {
             </div>
           </div>
         </div>
-        <div className=" overflow-hidden  bg-white py-[4rem]">
-
-          <div className="relative mx-[7%] md:mx-[7%] xl:mx-[50px] ipad-pro:mx-[50px] rounded-[30px] ">
-            <img
-              src={websiteCTAImage}
-              alt="Website CTA"
-              className="w-full h-[22rem] rounded-[30px]"
-            />
-
-            {/* Text Content Overlay */}
-            <div className={`absolute inset-0 flex flex-col text-left md:text-left items-start justify-start px-[10px] md:px-[30px] md:pt-[3rem] pb-4 pt-4 md:pb-[3rem] text-white`}>
-              <h2
-                className="font-inter text-[1.5625rem] xl:text-[2.1875rem] ipad-pro:text-[1.875rem] md:text-[2.1875rem] leading-[2.45rem] font-bold text-center xl:text-left ipad-pro:text-left  w-full md:w-[70%]"
-                data-aos="fade-right">
-                Didn’t Find the Right Role? Share Your Resume With Us!
-              </h2>
-              <p
-                className="mt-4 px-2 md:px-0 text-[0.875rem] md:text-[0.9375rem] xl:text-[1.15rem] ipad-pro:text-[1.125rem]  leading-[1.5rem] md:leading-[1.5875rem]  w-full md:w-[60%]"
-                data-aos="fade-right"
-              >
-                We’re always looking for talented individuals to join our team! If you don’t see a role that matches your skills, don’t worry - share your resume with us, and we’ll reach out when a suitable opportunity arises.
-              </p>
-
-              <motion.button
-                type="button"
-                whileHover={{
-                  backgroundColor: '#FFFFFF',
-                  color: '#1887C9',
-                  borderColor: '#1887C9',
-                  transition: { duration: 0.1 },
-                }}
-                className="group relative overflow-hidden inline-flex items-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg px-3 md:px-4 py-5 sm:py-5 md:py-2 border-2 border-[#1887C9] bg-[#1887C9] transition-all duration-300 mt-[30px]"
-                onClick={handleApplyNow}
-              >  Share Your Resume
-              </motion.button>
-            </div>
-          </div>
-        </div>
+        <CTASection
+          title="Didn’t Find the Right Role? Share Your Resume With Us!"
+          description="We’re always looking for talented individuals to join our team! If you don’t see a role that matches your skills, don’t worry - share your resume with us, and we’ll reach out when a suitable opportunity arises."
+          buttonText="Share Your Resume"
+          bgColor="bg-white"
+          link="#"
+          ctaImage={websiteCTAImage2}
+          onClick={handleApplyNow}
+        />
 
         {isModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -973,7 +946,7 @@ export default function JoinUs() {
                 sizes="(max-width: 640px) 100vw,
          (max-width: 1280px) 50vw,
          33vw"
-                loading="lazy" src={WebkorpsImg} alt="Webkorps Team Image" className="rounded-lg  w-full h-auto aspect-[4/3]" />
+                loading="lazy" src={WebkorpsTeamImg?.src || WebkorpsTeamImg} alt="Webkorps Team Image" className="rounded-lg  w-full h-auto aspect-[4/3]" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {images.map((image, index) => (

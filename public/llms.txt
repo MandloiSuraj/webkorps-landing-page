@@ -1,0 +1,30 @@
+# Webkorps | Leading IT Solutions and IT Services Provider
+
+> Discover innovative IT solutions with Webkorps, a trusted IT service provider offering scalable and secure IT services to drive your digital transformation and business growth.
+
+## Core Mission
+Webkorps is dedicated to providing high-quality IT services, including software development, mobile app development, and digital transformation strategies. We empower businesses with modern technology solutions tailored to their specific needs.
+
+## Primary Navigation
+- [Home](https://www.webkorps.com/) - Main landing page.
+- [About Us](https://www.webkorps.com/about-us) - Company vision, mission, and leadership.
+- [Services](https://www.webkorps.com/services) - Comprehensive list of IT services.
+- [Case Studies](https://www.webkorps.com/case-study) - Real-world examples of our work and client success stories.
+- [Technologies](https://www.webkorps.com/technology) - Our technical expertise and stack.
+- [Industries](https://www.webkorps.com/industry) - Sector-specific solutions we provide.
+- [Hire Developers](https://www.webkorps.com/developers) - Dedicated developer hiring services.
+- [Contact Us](https://www.webkorps.com/contact) - Start a conversation about your project.
+
+## Technical Expertise
+- **Web Development**: Modern, high-performance web applications.
+- **Mobile Development**: iOS and Android app solutions.
+- **Cloud Solutions**: Scalable and secure infrastructure.
+- **AI & Automation**: Integrating smart solutions for business efficiency.
+
+## Contact Information
+- **Email**: info@webkorps.com
+- **Website**: [www.webkorps.com](https://www.webkorps.com)
+- **Headquarters**: Indore, India (with global presence in Pune, USA, UK, and Kuwait).
+
+## Dynamic Content
+Webkorps maintains dynamic pages for various services, technologies, and career openings. For a full list of all accessible URLs, please refer to our [Sitemap](https://www.webkorps.com/sitemap.xml).

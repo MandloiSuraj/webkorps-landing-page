@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import ClientCard from "../sharedComponents/ClientCard";
 import AOS from 'aos';
 import HeroSectionUI from "../sharedComponents/HeroSectionUI";
+import FAQSection from "../sharedComponents/FAQSection";
 import websiteCTAImage2 from "../../assets/images/website-cta-1.jpg";
 import CTASection from "../sharedComponents/CTASection";
 import 'aos/dist/aos.css';
@@ -19,6 +20,33 @@ import 'aos/dist/aos.css';
 const AboutUs = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('experts'); // Add state for active tab
+
+  const faqData = {
+    title: `Everything You Need to Know: <span style="font-weight:700; color:#1887C9;">Contacting Webkorps FAQs</span>`,
+    description: "Have questions about how to reach us or what to expect? Here are some quick answers.",
+    data: [
+      {
+        "title": "What is the best way to contact you for business inquiries?",
+        "content": "For business inquiries, the best way is to fill out our Business Inquiry form on this page or email us directly at info@webkorps.com. Our team will review your requirements and get back to you promptly."
+      },
+      {
+        "title": "How soon can I expect a response after submitting a form?",
+        "content": "Our team typically responds to all inquiries within 24 to 48 business hours. For urgent matters, you can also reach us via phone during our business hours."
+      },
+      {
+        "title": "Do you offer consultations for new projects?",
+        "content": "Yes, we offer free initial consultations to understand your project needs, discuss technical possibilities, and provide a preliminary estimate."
+      },
+      {
+        "title": "Can I visit your office in person?",
+        "content": "Absolutely! We have multiple office locations. Please check the 'Our Global Presence' section below for addresses, and we recommend scheduling an appointment beforehand."
+      },
+      {
+        "title": "Do you provide support for existing software projects?",
+        "content": "Yes, we provide post-deployment support, maintenance services, and can also take over existing projects for further development and optimization."
+      }
+    ]
+  };
   useEffect(() => {
     AOS.init({
       duration: 500, easing: "ease",
@@ -88,7 +116,7 @@ const AboutUs = () => {
         const locationData = await response.json();
         const userCountry = countries.find(
           (country) =>
-            country.label.toLowerCase() === locationData.country.toLowerCase()
+            country.label.toLowerCase() === locationData.country?.toLowerCase()
         );
 
         if (userCountry) {
@@ -374,8 +402,8 @@ const AboutUs = () => {
               <div className="flex justify-evenly border-b  border-gray-200 mb-4">
                 <button
                   className={`px-4 py-2 font-medium  text-[1.2rem] ${activeTab === 'experts'
-                      ? 'border-b-2 border-[#1887C9] text-[#1887C9]'
-                      : 'text-gray-500 hover:text-gray-700'
+                    ? 'border-b-2 border-[#1887C9] text-[#1887C9]'
+                    : 'text-gray-500 hover:text-gray-700'
                     }`}
                   onClick={() => setActiveTab('experts')}
                 >
@@ -383,8 +411,8 @@ const AboutUs = () => {
                 </button>
                 <button
                   className={`px-4 py-2 font-medium text-[1.2rem] ${activeTab === 'career'
-                      ? 'border-b-2 border-[#1887C9] text-[#1887C9]'
-                      : 'text-gray-500 hover:text-gray-700'
+                    ? 'border-b-2 border-[#1887C9] text-[#1887C9]'
+                    : 'text-gray-500 hover:text-gray-700'
                     }`}
                   onClick={() => setActiveTab('career')}
                 >
@@ -648,8 +676,8 @@ const AboutUs = () => {
                         {/* Checkmark Icon */}
                         <div className="mb-4">
                           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="28" cy="28" r="28" fill="#22C55E"/>
-                            <path d="M17 29.5L25 37.5L39 21.5" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                            <circle cx="28" cy="28" r="28" fill="#22C55E" />
+                            <path d="M17 29.5L25 37.5L39 21.5" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <h3 className="text-2xl font-bold mb-3 text-gray-800">Thank You!</h3>
@@ -673,8 +701,9 @@ const AboutUs = () => {
 
       <CTASection title={'Looking for Career Opportunities'} description={'Join a workplace that values creativity, collaboration, and career growth to help you achieve your dreams. Explore exciting roles, unlock your potential, and grow your career with us.'} buttonText={' Explore Exciting Opportunities'} bgColor='bg-white' link={'/join-us'} ctaImage={websiteCTAImage2} />
       <OfficeLocation />
+      <FAQSection title={faqData.title} faqData={faqData.data} description={faqData.description} />
 
-      {/* </div> */}
+
       <Footer />
     </div>
   );

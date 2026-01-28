@@ -18,6 +18,7 @@ import ClientFeedback from "../sharedComponents/clientFeedback";
 import CTASection from "../sharedComponents/CTASection";
 import AOS from 'aos';
 import HeroSectionUI from "../sharedComponents/HeroSectionUI";
+import FAQSection from "../sharedComponents/FAQSection";
 import websiteCTAImage from "../../assets/images/website-cta-5.jpg";
 import websiteCTAImage2 from "../../assets/images/website-cta-1.jpg";
 import websiteCTAImage3 from "../../assets/images/website-cta-3.jpg";
@@ -72,6 +73,29 @@ const AboutContainer = () => {
   ];
   const scrollRef = useRef(null);
   const navigate = useNavigate();
+
+  const faqData = {
+    title: `Everything You Need to Know: <span style="font-weight:700; color:#1887C9;">About Webkorps FAQs</span>`,
+    description: "Learn more about our journey, mission, and what makes Webkorps a trusted IT partner.",
+    data: [
+      {
+        "title": "When was Webkorps founded?",
+        "content": "Webkorps was founded with a vision to deliver excellence in IT services. We have been empowering businesses with innovative solutions for over 8 years."
+      },
+      {
+        "title": "What is Webkorps' mission?",
+        "content": "Our mission is to empower businesses worldwide with cutting-edge technology solutions that drive growth, efficiency, and digital transformation."
+      },
+      {
+        "title": "Where are Webkorps' offices located?",
+        "content": "Our headquarters is in Indore, India. We also have offices in Pune and Bengaluru, India, as well as international locations in Frisco, TX, and Sheridan, WY, USA."
+      },
+      {
+        "title": "How large is the Webkorps team?",
+        "content": "We have a dedicated team of over 100+ skilled IT professionals, including developers, designers, project managers, and quality analysts."
+      }
+    ]
+  };
   const fadeInFromBottom = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -457,6 +481,7 @@ const AboutContainer = () => {
         {/* <ClientFeedback title={'Client Testimonials<br/> Success Stories That Inspire'} /> */}
         <CTASection title={'Your Success Story Starts Here!'} description={'Our clients’ success speaks for itself. Let’s create your success story with tailored IT solutions that drive business growth!'} buttonText={'Let’s Talk!'} bgColor='bg-[#EBEDEE]' link={'/contact'} ctaImage={websiteCTAImage4} />
         <OfficeLocation />
+        <FAQSection title={faqData.title} faqData={faqData.data} description={faqData.description} />
       </div>
 
       <Footer />

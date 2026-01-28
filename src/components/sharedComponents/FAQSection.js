@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -25,9 +26,7 @@ const FAQSection = ({ title, faqData, description, content }) => {
             <div className="w-full bg-white rounded-[28px] shadow-custom-lg p-6" data-aos="fade-left"
                 data-aos-duration="1000"
                 data-aos-delay="500">
-                <h2 className="text-center font-bold text-[25px] xl:text-[30px] ipad-pro:text-[28px] md:text-[25px] leading-[42px] mb-6" dangerouslySetInnerHTML={{ __html: title }}>
-
-                </h2>
+                <h2 className="text-center font-bold text-[25px] xl:text-[30px] ipad-pro:text-[28px] md:text-[25px] leading-[42px] mb-6" dangerouslySetInnerHTML={{ __html: title }}></h2>
                 {description && <p className=" font-normal text-[0.9375rem] xl:text-[1.15rem] ipad-pro:text-[1.125rem] text-center md:text-[1.15rem] leading-[1.5875rem] pt-[30px] text-[#061C3D]">
                     {description}
                 </p>}
@@ -59,8 +58,7 @@ const FAQSection = ({ title, faqData, description, content }) => {
                                                 >
                                                     <div className="bg-[#F4F7FB] px-6 py-4  text-gray-700 text-[18px] rounded-b-xl whitespace-pre-line " dangerouslySetInnerHTML={{
                                                         __html: formatContent(item.content)
-                                                    }}>
-                                                    </div>
+                                                    }}></div>
                                                 </motion.div>
                                             )}
                                         </AnimatePresence>
@@ -70,8 +68,7 @@ const FAQSection = ({ title, faqData, description, content }) => {
                         </div>
                     ))}
                 </div>
-                {content && <p className=" font-normal text-[0.9375rem]  text-center xl:text-[1.15rem] ipad-pro:text-[1.125rem] md:text-[1.15rem] leading-[1.5875rem] pt-[30px] text-[#061C3D]" dangerouslySetInnerHTML={{ __html: content }}>
-                </p>}
+                {content && <p className=" font-normal text-[0.9375rem]  text-center xl:text-[1.15rem] ipad-pro:text-[1.125rem] md:text-[1.15rem] leading-[1.5875rem] pt-[30px] text-[#061C3D]" dangerouslySetInnerHTML={{ __html: content }}></p>}
                 {/* Show More / Show Less Button */}
                 <motion.div className="text-center mt-6">
                     <motion.button

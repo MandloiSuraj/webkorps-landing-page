@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from "../sharedComponents/Header";
 import Footer from "../sharedComponents/footer";
 import { motion } from 'framer-motion';
+import FAQSection from "../sharedComponents/FAQSection";
 
 export default function JoinUsDetails() {
   const { id } = useParams();
@@ -10,6 +11,33 @@ export default function JoinUsDetails() {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [formLoading, setFormLoading] = useState(false)
+
+  const faqData = {
+    title: `Everything You Need to Know: <span style="font-weight:700; color:#1887C9;">Job Application FAQs</span>`,
+    description: "Got questions about applying or our hiring process? We've got you covered.",
+    data: [
+      {
+        "title": "How do I apply for this position?",
+        "content": "To apply, simply fill out the application form on this page with your full name, email, phone number, and attach your resume in PDF format. Once submitted, our HR team will review your application."
+      },
+      {
+        "title": "Can I apply for multiple positions at Webkorps?",
+        "content": "Yes, you can apply for multiple roles if your skills and experience align with the job requirements. Each application will be reviewed independently."
+      },
+      {
+        "title": "What does the typical hiring process look like?",
+        "content": "Our hiring process generally includes an initial HR screening, one or more technical interview rounds, and a final discussion with management. The process is designed to be transparent and efficient."
+      },
+      {
+        "title": "How long will it take to hear back after I apply?",
+        "content": "We strive to review all applications promptly. You can typically expect to hear back from our recruitment team within 1 to 2 weeks regarding the status of your application."
+      },
+      {
+        "title": "What if I don't see a role that matches my skills?",
+        "content": "If you don't find a currently open role that fits your profile, you can still share your resume with us via our main Careers page. we'll keep your details in our talent pool for future opportunities."
+      }
+    ]
+  };
 
   useEffect(() => {
     if (id) {
@@ -27,13 +55,13 @@ export default function JoinUsDetails() {
   }, [id]);
 
   const items = [
-    { name: 'Location', key: 'location', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/locationIcon.webp' ,alt :'location Icon' },
-    { name: 'Job Type', key: 'job_type', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/jobTypeIcon.webp' ,alt:"location Icon"},
-    { name: 'Date posted', key: 'created_at', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/calendarIcon.webp',alt:'calendar Icon' },
-    { name: 'Experience', key: 'experience', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/ExperienceIcon.webp' ,alt:'location Icon'},
-    { name: 'Working Hours', key: 'shift_start_time', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/Hoursicon.webp' ,alt:'location Icon'},
-    { name: 'Working Days', key: 'working_days', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/WorkingIcon.webp',alt:'location Icon' },
-    { name: 'Vacancy', key: 'number_of_vacancy', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/vacancyIcon.webp',alt:'location Icon' },
+    { name: 'Location', key: 'location', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/locationIcon.webp', alt: 'location Icon' },
+    { name: 'Job Type', key: 'job_type', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/jobTypeIcon.webp', alt: "location Icon" },
+    { name: 'Date posted', key: 'created_at', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/calendarIcon.webp', alt: 'calendar Icon' },
+    { name: 'Experience', key: 'experience', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/ExperienceIcon.webp', alt: 'location Icon' },
+    { name: 'Working Hours', key: 'shift_start_time', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/Hoursicon.webp', alt: 'location Icon' },
+    { name: 'Working Days', key: 'working_days', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/WorkingIcon.webp', alt: 'location Icon' },
+    { name: 'Vacancy', key: 'number_of_vacancy', image: 'https://webkorps-app.s3.us-east-1.amazonaws.com/vacancyIcon.webp', alt: 'location Icon' },
   ];
 
   const [formData, setFormData] = useState({
@@ -543,6 +571,7 @@ export default function JoinUsDetails() {
           </div>
         </div>
       )}
+      <FAQSection title={faqData.title} faqData={faqData.data} description={faqData.description} />
       <Footer />
     </div>
   );

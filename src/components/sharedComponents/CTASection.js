@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 import { isValidTo } from "../../Utility/validTo";
 
-const CTASection = ({ title, description, buttonText, bgColor, link, ctaImage, textColor }) => {
+const CTASection = ({ title, description, buttonText, bgColor, link, ctaImage, textColor, onClick }) => {
   return (
     <div className={`${bgColor} py-[4rem]`}>
       <div className="relative mx-[7%] md:mx-[7%] xl:mx-[50px] ipad-pro:mx-[50px] rounded-[30px] overflow-hidden">
@@ -35,9 +35,25 @@ const CTASection = ({ title, description, buttonText, bgColor, link, ctaImage, t
               dangerouslySetInnerHTML={{ __html: description }}
             ></p>
 
-            <Link to={isValidTo(link) ? link : '/'}>
+            {link && !onClick ? (
+              <Link to={isValidTo(link) ? link : '/'}>
+                <motion.button
+                  type="button"
+                  whileHover={{
+                    backgroundColor: '#FFFFFF',
+                    color: '#1887C9',
+                    borderColor: '#1887C9',
+                    transition: { duration: 0.1 },
+                  }}
+                  className="group relative overflow-hidden inline-flex items-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg px-3 md:px-4 py-3 sm:py-5 md:py-2 border-2 border-[#1887C9] bg-[#1887C9] transition-all duration-300 mt-[30px]"
+                >
+                  {buttonText}
+                </motion.button>
+              </Link>
+            ) : (
               <motion.button
                 type="button"
+                onClick={onClick}
                 whileHover={{
                   backgroundColor: '#FFFFFF',
                   color: '#1887C9',
@@ -48,7 +64,7 @@ const CTASection = ({ title, description, buttonText, bgColor, link, ctaImage, t
               >
                 {buttonText}
               </motion.button>
-            </Link>
+            )}
           </div>
         </div>
       </div>
