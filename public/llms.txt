@@ -1,30 +1,88 @@
 # Webkorps | Leading IT Solutions and IT Services Provider
 
-> Discover innovative IT solutions with Webkorps, a trusted IT service provider offering scalable and secure IT services to drive your digital transformation and business growth.
+> Discover innovative IT solutions with Webkorps, a trusted IT service provider offering scalable and secure IT services to drive digital transformation and business growth.
 
-## Core Mission
-Webkorps is dedicated to providing high-quality IT services, including software development, mobile app development, and digital transformation strategies. We empower businesses with modern technology solutions tailored to their specific needs.
+## Company Overview
+- [Webkorps Home](https://www.webkorps.com/): Official website.
+- [About Webkorps](https://www.webkorps.com/about-us): Leading IT solutions provider offering custom software, web and mobile app development, and digital transformation services.
 
-## Primary Navigation
-- [Home](https://www.webkorps.com/) - Main landing page.
-- [About Us](https://www.webkorps.com/about-us) - Company vision, mission, and leadership.
-- [Services](https://www.webkorps.com/services) - Comprehensive list of IT services.
-- [Case Studies](https://www.webkorps.com/case-study) - Real-world examples of our work and client success stories.
-- [Technologies](https://www.webkorps.com/technology) - Our technical expertise and stack.
-- [Industries](https://www.webkorps.com/industry) - Sector-specific solutions we provide.
-- [Hire Developers](https://www.webkorps.com/developers) - Dedicated developer hiring services.
-- [Contact Us](https://www.webkorps.com/contact) - Start a conversation about your project.
+## Services
+- [Custom Software Development](https://www.webkorps.com/custom-software-development): Scalable, secure, and high-performance solutions.
+- [Mobile App Development](https://www.webkorps.com/mobile-app-development): High-performance, user-friendly, and scalable apps.
+- [Blockchain Development](https://www.webkorps.com/blockchain-development): Secure, scalable, and decentralized blockchain solutions.
+- [Web Development](https://www.webkorps.com/web-development): Secure, scalable, and high-performance web solutions.
+- [AI-ML Development](https://www.webkorps.com/ai-ml-development): Intelligent, scalable, and data-driven solutions.
+- [Enterprise Software Development](https://www.webkorps.com/enterprise-software-development): Scalable, secure, and high-performance enterprise solutions.
+- [E-Commerce Development](https://www.webkorps.com/ecommerce-development): Secure, scalable, and high-performing online stores.
+- [Cloud Application Development](https://www.webkorps.com/cloud-application-development): Secure, scalable, and high-performance cloud solutions.
+- [IoT Application Development](https://www.webkorps.com/iot-application-development): Smart, secure, and scalable connected solutions.
+- [Managed IT Services](https://www.webkorps.com/managed-it-service): Secure, scalable, and efficient IT operations.
+- [IT Staff Augmentation](https://www.webkorps.com/it-staff-augmentation): Scale your team with top tech talent quickly and efficiently.
 
-## Technical Expertise
-- **Web Development**: Modern, high-performance web applications.
-- **Mobile Development**: iOS and Android app solutions.
-- **Cloud Solutions**: Scalable and secure infrastructure.
-- **AI & Automation**: Integrating smart solutions for business efficiency.
+## Technology Expertise
+- [Ruby on Rails](https://www.webkorps.com/technology/ruby-on-rails)
+- [Java](https://www.webkorps.com/technology/java)
+- [Android](https://www.webkorps.com/technology/android)
+- [iOS](https://www.webkorps.com/technology/ios)
+- [.NET](https://www.webkorps.com/technology/dot-net)
+- [Python](https://www.webkorps.com/technology/python)
+- [React-Native](https://www.webkorps.com/technology/react-native)
+- [PHP](https://www.webkorps.com/technology/php)
+
+## Industry Solutions
+- [Logistics](https://www.webkorps.com/industry/logistic): Custom logistics solutions to streamline operations.
+- [FinTech](https://www.webkorps.com/industry/fintech): Secure, scalable, and innovative financial solutions.
+- [Healthcare](https://www.webkorps.com/industry/healthcare): Innovative solutions to improve patient care and streamline operations.
+- [Retail](https://www.webkorps.com/industry/retail): Enhance sales, customer experience, and retail operations.
+- [Real Estate](https://www.webkorps.com/industry/real-estate): Streamline property management and drive growth.
+- [Warehouse Management](https://www.webkorps.com/industry/warehouse): Optimize inventory and streamline operations.
+- [Travel and Hospitality](https://www.webkorps.com/industry/travel-and-hospitality): Enhance bookings & guest experiences.
+
+## Case Studies and Work
+- [Our Work](https://www.webkorps.com/case-study): Explore latest work across technologies and industries.
+- [CloudShim](https://www.webkorps.com/case-study/cloudshim): Cloud management and cost optimization tool.
+- [ABB Digital Transformation](https://www.webkorps.com/case-study/abb): IoT integration and operational efficiency.
+- [Cryoport](https://www.webkorps.com/case-study/cryoport): Temperature-controlled logistics and supply chain solution.
+- [Cigna](https://www.webkorps.com/case-study/cigna): Healthcare platform for appointment scheduling and data sync.
+- [E-Learning Platform](https://www.webkorps.com/case-study/elearningapp): AI-driven e-learning with personalized paths.
+- [ABP News](https://www.webkorps.com/case-study/abpnews): Feature-rich mobile app for real-time news delivery.
+- [Verizon](https://www.webkorps.com/case-study/verizon): RPA powered HR management automation tool.
+- [inKind](https://www.webkorps.com/case-study/inkind): Customer loyalty and rewards for restaurants.
+- [Cardinalhire](https://www.webkorps.com/case-study/cardinalhire): Online recruiting and hiring platform.
+- [Scoutr](https://www.webkorps.com/case-study/scoutr): Talent management system with advanced matching.
+- [ACIMA](https://www.webkorps.com/case-study/acima): Lease-to-own solutions.
+- [Styla](https://www.webkorps.com/case-study/styla): Streamlining E-commerce with PWAs and no-code solutions.
+- [Pebble](https://www.webkorps.com/case-study/pebble): Custom mobile app for smartwatches.
+- [Sonic Healthcare](https://www.webkorps.com/case-study/sonichealthcare): AI-driven platform for diagnostic services.
+- [PayPal](https://www.webkorps.com/case-study/paypal): Payment platform for merchants optimization.
+- [DigiKagaz](https://www.webkorps.com/case-study/digikagaz): Document automation for legal professionals.
+- [Bhai Bandhu](https://www.webkorps.com/case-study/bhaibandhu): B2B marketplace for Indian ethnic wear.
+- [The Fragrance Shop](https://www.webkorps.com/case-study/thefragranceshop): Mobile app for loyalty and engagement.
+- [My Kia App](https://www.webkorps.com/case-study/mykiaapp): Integrated sales and service for Kia owners.
+- [Purvankara’s](https://www.webkorps.com/case-study/purvankara): Scalable email solution.
+- [Canopie](https://www.webkorps.com/case-study/canopie): HIPAA-compliant app for maternal mental health.
+- [Shree Laxmi Steels](https://www.webkorps.com/case-study/shreelaxmisteels): Custom CRM with customizable dashboards.
+- [Property Finder](https://www.webkorps.com/case-study/propertyfinder): Buyer-centric real estate platform.
+- [Tonik Bank](https://www.webkorps.com/case-study/tonik): Redesigned mobile app for UI/UX and scalability.
+- [Wazir](https://www.webkorps.com/case-study/wazir): Performance and security for leading crypto app.
+- [Ethmeme](https://www.webkorps.com/case-study/ethememe): Simplifying crypto token creation and trading.
+- [Wendy's](https://www.webkorps.com/case-study/wendy): Digital ordering solutions for food industry.
+
+## Events
+- [CES 2026 Recap](https://www.webkorps.com/event/ces): AI innovation and product strategy.
+- [INDIASOFT 2025](https://www.webkorps.com/event/indiasoft): Innovation and collaboration in tech.
+- [INBOUND 2025](https://www.webkorps.com/event/inbound): Smarter marketing, sales, and customer experiences.
+- [GITEX Global 2025](https://www.webkorps.com/event/gitex-dubai): Innovation in action in Dubai.
+- [MWC Las Vegas 2025](https://www.webkorps.com/event/mwc): Future of mobile and digital solutions.
 
 ## Contact Information
-- **Email**: info@webkorps.com
+- **Email**: contact@webkorps.com
 - **Website**: [www.webkorps.com](https://www.webkorps.com)
 - **Headquarters**: Indore, India (with global presence in Pune, USA, UK, and Kuwait).
 
-## Dynamic Content
-Webkorps maintains dynamic pages for various services, technologies, and career openings. For a full list of all accessible URLs, please refer to our [Sitemap](https://www.webkorps.com/sitemap.xml).
+## Social Media
+- [Facebook](https://www.facebook.com/WebKorps/)
+- [LinkedIn](https://www.linkedin.com/company/webkorps)
+- [Twitter](https://x.com/webkorpsllc)
+- [Instagram](https://www.instagram.com/webkorps)
+- [YouTube](https://www.youtube.com/@webkorps)
