@@ -18,7 +18,7 @@ const Card = ({ image, alt }) => {
                     className="w-full h-full  transition-transform duration-300"
                 />
             </div>
-            <div className="absolute bottom-0 left-0 w-[350px] bg-[#F0F0F0] ipad-pro:ml-[30px] ml-[10px] md-ml-[10px] xl:ml-[30px] mb-[20px] rounded-[20px] text-white p-4 flex items-center justify-between opacity-100  shadow-lg">
+            <div className="absolute bottom-0 left-0 w-[350px]  ipad-pro:ml-[30px] ml-[10px] md-ml-[10px] xl:ml-[30px] mb-[20px] rounded-[20px] text-white p-4 flex items-center justify-between opacity-100  shadow-lg">
                 <div className="text-left">
                     <p className="text-black font-quicksand font-bold text-[16px] leading-[20px]">Chirag Agrawal</p>
                     <p className="text-black font-quicksand text-[14px] leading-[18px]">Founder and CEO</p>
@@ -87,8 +87,10 @@ function EventIdiaSoft() {
     const [openIndex, setOpenIndex] = useState(null);
     const [showAll, setShowAll] = useState(false);
     useEffect(() => {
-        AOS.init({ duration: 500, easing: "ease",
-            once: true, });
+        AOS.init({
+            duration: 500, easing: "ease",
+            once: true,
+        });
     }, []);
     // Split data into two columns
     const middleIndex = Math.ceil(data.length / 2);
@@ -109,7 +111,7 @@ function EventIdiaSoft() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [currentPage, setCurrentPage] = useState(0);
 
-    const industries = ["All","Healthcare", "E-commerce", "Hospitality & Food", "Fintech", "Blockchain", "Manufacturing, Automotive, & IoT", "Logistics & Supply chain", "HRMS"];
+    const industries = ["All", "Healthcare", "E-commerce", "Hospitality & Food", "Fintech", "Blockchain", "Manufacturing, Automotive, & IoT", "Logistics & Supply chain", "HRMS"];
 
     const filteredEvents =
         industries[selectedIndex] === "All"
@@ -168,7 +170,7 @@ function EventIdiaSoft() {
                 <div className="w-full px-[5%] xl:px-[50px]  md:px-[50px] ipad-pro:px-[50px] content">
                     <div className="flex overflow-hidden flex-col ipad-pro:flex-row-reverse md:flex-row-reverse   xl:flex-row-reverse items-start md:items-start ">
                         <div className='w-[100%] xl:w-[80%] flex flex-col'>
-                            <div className=" grid grid-cols-2 gap-4">
+                            <div className="relative grid grid-cols-2 gap-4">
                                 <img width="800" height="600" sizes="(max-width: 640px) 100vw, 
          (max-width: 1280px) 50vw, 
          33vw" loading="lazy"
@@ -196,7 +198,7 @@ function EventIdiaSoft() {
          33vw" loading="lazy"
                                 src="https://webkorps-app.s3.us-east-1.amazonaws.com/eventpage1.webp"
                                 alt="Demo 3"
-                                className=" h-[275] xl:h-[216px] ipad-pro:h-[275px]ipad-pro:w-[100%] md:w-[100%] ipad-sum:w-[100%] w-[100%] xl:w-[588px] mt-[35px]"
+                                className="h-[275px] xl:h-[216px] ipad-pro:h-[275px] ipad-pro:w-[100%] md:w-[100%] ipad-sum:w-[100%] w-[100%] xl:w-[588px] mt-[35px]"
                             />
                         </div>
 
@@ -296,7 +298,7 @@ function EventIdiaSoft() {
                 <div className="flex overflow-hidden flex-col ipad-pro:flex-row  md:flex-col xxl:gap-[10%] xl:gap-[125px] md:gap-[30px]  xl:flex-row items-start md:items-start ">
                     <div className="relative  flex justify-center items-center xl:pt-[66px] xl:pl-[54px] ipad-pro:pt-[66px] xl:pr-0 ipad-pro:pr-0 ipad-pro:pt-[66px] pt-[35px] pl-[35px] pr-[35px] ">
                         <div
-                            className="absolute top-0 left-0 w-full h-full bg-[#F0F0F0] z-[-1] rounded-tr-[30px]"
+                            className="absolute top-0 left-0 w-full h-full z-[-1] rounded-tr-[30px]"
                             style={{ clipPath: 'inset(0px 25% 50px 0)' }}
                         ></div>
 
@@ -355,32 +357,30 @@ function EventIdiaSoft() {
             </div>
             <div className="w-full px-[5%] xl:pl-[81px]  xl:pr-0 md:px-[5%] ipad-pro:pl-[5%] ipad-pro:pr-0 content xl:mt-[119px] md:mt-[30px] ipad-pro:mt-[119px] mt-[30px] ">
                 <div className="flex overflow-hidden flex-col ipad-pro:flex-row-reverse md:flex-row-reverse  xl:flex-row-reverse items-start md:items-start ">
-                    <div className="w-[100%] flex xl:flex-row ipad-pro:flex-row md:flex-col flex-col   gap-4">
-                        <div className='flex-col flex w-[50%]'>
+                    <div className="w-[100%] flex xl:flex-row ipad-pro:flex-row md:flex-col flex-col gap-4">
+                        <div className='flex-col flex w-[100%] xl:w-[50%] ipad-pro:w-[50%]'>
                             <img
                                 width="800" height="600"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                                 loading="lazy"
                                 src="https://webkorps-app.s3.us-east-1.amazonaws.com/indiasoft-exhibition.webp"
                                 alt="indiasoft-exhibition"
-                                className="h-[229px] xl:h-[229px] ipad-pro:h-[229px] md:max-w-[372px] max-w-[372px]  md:w-[900px] w-[900px]  ipad-pro:max-w-[100%] ipad-pro:w-full  xl:max-w-[100%] rounded-[20px] object-fill"
+                                className="h-[229px] xl:h-[229px] ipad-pro:h-[229px] w-full rounded-[20px] object-cover"
                             />
 
                             <img
                                 width="800" height="600"
                                 sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                                 loading="lazy"
-                                src="https://webkorps-app.s3.us-east-1.amazonaws.com/indiasoft-exhibitor.webp"
+                                src="https://webkorps-app.s3.us-east-1.amazonaws.com/webkorps-at-indiasoft-2025.webp"
                                 alt="indiasoft-exhibitor"
-                                className="h-[338px] xl:h-[338px] ipad-pro:h-[338px] md:max-w-[372px] max-w-[372px]  md:w-[900px] w-[900px] mt-[20px] ipad-pro:max-w-[100%] ipad-pro:w-full   xl:max-w-[100%] rounded-[20px] object-fill"
+                                className="h-[338px] xl:h-[338px] ipad-pro:h-[338px] w-full mt-[20px] rounded-[20px] object-cover"
                             />
-
                         </div>
-                        <div className="relative  flex justify-center items-center  ">
-
+                        <div className="relative flex justify-center items-center w-[100%] xl:w-[50%] ipad-pro:w-[50%]">
                             <div
-                                className="absolute top-0 left-0 w-full h-full bg-[#F7F7F7] z-[-1] rounded-tr-[30px]"
-                                style={{ clipPath: 'inset(40px 0% 0px 30%' }}
+                                className="absolute top-0 left-0 w-full h-full z-[-1] rounded-tr-[30px]"
+                                style={{ clipPath: 'inset(0px 0% 0px 30%)' }}
                             ></div>
                             <img
                                 width="800"
@@ -389,9 +389,8 @@ function EventIdiaSoft() {
                                 loading="lazy"
                                 src="https://webkorps-app.s3.us-east-1.amazonaws.com/indiasoft-2025.webp"
                                 alt="indiasoft-2025"
-                                className="h-[445px] xl:h-[500px] xl:max-w-[100%] xxl:w-[100%] ipad-pro:h-[445px] w-[100%] ipad-pro:w-[100%] md:w-[100%] xl:w-[100%]  mt-[92px] rounded-tl-[20px] rounded-bl-[20px]"
+                                className="h-[445px] xl:h-[500px] ipad-pro:h-[445px] w-full mt-0 rounded-tl-[20px] rounded-bl-[20px] object-cover"
                             />
-
                         </div>
 
                     </div>

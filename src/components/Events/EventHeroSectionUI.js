@@ -27,7 +27,7 @@ function EventHeroSectionUI({
                     height="800"
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     loading="lazy"
-                    src={image}
+                    src={image?.src || image}
                     alt={imageAlt}
                     className="w-full h-full object-cover"
                 />
