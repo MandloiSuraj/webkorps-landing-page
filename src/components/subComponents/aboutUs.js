@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "../sharedComponents/Header";
 import Footer from "../sharedComponents/footer";
 import { Helmet } from "react-helmet-async";
-import PhoneInput from 'react-phone-number-input';
+import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Select from "react-select";
@@ -16,6 +16,11 @@ import FAQSection from "../sharedComponents/FAQSection";
 import websiteCTAImage2 from "../../assets/images/website-cta-1.jpg";
 import CTASection from "../sharedComponents/CTASection";
 import 'aos/dist/aos.css';
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+  (typeof window !== 'undefined' && window.location.hostname === 'localhost'
+    ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+    : '6LdEkZoqAAAAAPn6MpmkLFjte5HUZlw2n6fctOKR');
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -78,10 +83,32 @@ const AboutUs = () => {
   const [careerFormErrors, setCareerFormErrors] = useState({});
 
   const handlePhoneChange = (value) => {
-    setFormData((prev) => ({ ...prev, contact_number: value }));
-    // Only validate if value is not empty
     if (value) {
-      validateField('contact_number', value);
+      const digitsOnly = value.replace(/\D/g, '');
+      // Allow up to 15 digits total (country code + national)
+      if (digitsOnly.length > 15) {
+        return;
+      }
+    }
+    setFormData((prev) => ({ ...prev, contact_number: value }));
+
+    if (value) {
+      const phoneNumber = parsePhoneNumber(value);
+      if (phoneNumber) {
+        // If the number is valid but not of the preferred length, or just invalid
+        if (!isValidPhoneNumber(value)) {
+          // We show error only if it's definitely wrong or too long
+          // But to meet user's "10 digit" preference:
+          const national = phoneNumber.nationalNumber;
+          if (national.length > 10) {
+            setErrors((prev) => ({ ...prev, contact_number: 'Contact Number cannot exceed 10 digits.' }));
+          } else {
+            setErrors((prev) => ({ ...prev, contact_number: '' }));
+          }
+        } else {
+          setErrors((prev) => ({ ...prev, contact_number: '' }));
+        }
+      }
     } else {
       setErrors((prev) => ({ ...prev, contact_number: 'Contact Number is required.' }));
     }
@@ -116,7 +143,7 @@ const AboutUs = () => {
         const locationData = await response.json();
         const userCountry = countries.find(
           (country) =>
-            country.label.toLowerCase() === locationData.country?.toLowerCase()
+            country.label?.toLowerCase() === locationData.country?.toLowerCase()
         );
 
         if (userCountry) {
@@ -156,6 +183,19 @@ const AboutUs = () => {
     // Check for validation errors or other error messages
     if (hasError || Object.values(errors).some((error) => error !== '')) {
       return;
+    }
+
+    // Additional strict check for phone number length and validity on submit
+    if (formData.contact_number) {
+      if (!isValidPhoneNumber(formData.contact_number)) {
+        setErrors((prev) => ({ ...prev, contact_number: 'Please enter a valid phone number for the selected country.' }));
+        return;
+      }
+      const phoneNumber = parsePhoneNumber(formData.contact_number);
+      if (phoneNumber && phoneNumber.nationalNumber.length !== 10) {
+        setErrors((prev) => ({ ...prev, contact_number: 'Contact Number must be exactly 10 digits.' }));
+        return;
+      }
     }
     console.log("captcha value ", captchaValue)
     if (!captchaValue) {
@@ -204,6 +244,46 @@ const AboutUs = () => {
   const handleCareerChange = (e) => {
     const { name, value } = e.target;
     setCareerFormData({ ...careerFormData, [name]: value });
+
+    // Real-time validation for career form
+    let errorMessage = '';
+    const trimmedValue = value.trim();
+
+    if (name === 'full_name' || name === 'reference_name') {
+      if (trimmedValue && !/^[A-Za-z\s]+$/.test(trimmedValue)) {
+        errorMessage = 'Name can only contain letters and spaces';
+      }
+      setCareerFormErrors((prev) => ({ ...prev, [name]: errorMessage }));
+    }
+  };
+
+  const handleCareerPhoneChange = (value) => {
+    if (value) {
+      const digitsOnly = value.replace(/\D/g, '');
+      // Allow up to 15 digits total (country code + national)
+      if (digitsOnly.length > 15) {
+        return;
+      }
+    }
+    setCareerFormData((prev) => ({ ...prev, phone_number: value }));
+
+    if (value) {
+      const phoneNumber = parsePhoneNumber(value);
+      if (phoneNumber) {
+        if (!isValidPhoneNumber(value)) {
+          const national = phoneNumber.nationalNumber;
+          if (national.length > 10) {
+            setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Phone number cannot exceed 10 digits' }));
+          } else {
+            setCareerFormErrors((prev) => ({ ...prev, phone_number: '' }));
+          }
+        } else {
+          setCareerFormErrors((prev) => ({ ...prev, phone_number: '' }));
+        }
+      }
+    } else {
+      setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Phone number is required' }));
+    }
   };
 
   const validateCareerForm = () => {
@@ -212,6 +292,8 @@ const AboutUs = () => {
 
     if (!full_name.trim()) {
       errors.full_name = 'Name is required';
+    } else if (!/^[A-Za-z\s]+$/.test(full_name)) {
+      errors.full_name = 'Name can only contain letters and spaces';
     }
 
     if (!email.trim()) {
@@ -222,8 +304,14 @@ const AboutUs = () => {
 
     if (!phone_number) {
       errors.phone_number = 'Phone number is required';
-    } else if (phone_number.length < 10) {
-      errors.phone_number = 'Phone number must be at least 10 digits';
+    } else {
+      if (!isValidPhoneNumber(phone_number)) {
+        errors.phone_number = 'Please enter a valid phone number';
+      }
+      const phoneNumber = parsePhoneNumber(phone_number);
+      if (phoneNumber && phoneNumber.nationalNumber.length !== 10) {
+        errors.phone_number = 'Phone number must be exactly 10 digits';
+      }
     }
 
     if (!gender) {
@@ -232,6 +320,10 @@ const AboutUs = () => {
 
     if (!resume) {
       errors.resume = 'Please upload your CV';
+    }
+
+    if (reference_name && !/^[A-Za-z\s]+$/.test(reference_name)) {
+      errors.reference_name = 'Reference Name can only contain letters and spaces';
     }
 
     if (!declaration) {
@@ -322,8 +414,19 @@ const AboutUs = () => {
       case 'contact_number':
         if (!trimmedValue) {
           errorMessage = 'Contact Number is required.';
-        } else if (!trimmedValue.startsWith('+') || trimmedValue.length < 8) {
-          errorMessage = 'Please enter a valid international phone number.';
+        } else {
+          const phoneNumber = parsePhoneNumber(trimmedValue);
+          if (phoneNumber) {
+            const national = phoneNumber.nationalNumber;
+            if (national.length > 10) {
+              errorMessage = 'Contact Number cannot exceed 10 digits.';
+            }
+          }
+        }
+        break;
+      case 'company':
+        if (trimmedValue && !/^[A-Za-z0-9\s.\-&]+$/.test(trimmedValue)) {
+          errorMessage = 'Company name can only contain letters, numbers, spaces, and . - &';
         }
         break;
       case 'message':
@@ -502,7 +605,14 @@ const AboutUs = () => {
                     <div>
                       <PhoneInput
                         international
-                        defaultCountry={selectedCountry?.value}
+                        country={selectedCountry?.value}
+                        onCountryChange={(country) => {
+                          const found = countries.find(c => c.value === country);
+                          if (found) {
+                            setSelectedCountry(found);
+                            setFormData(prev => ({ ...prev, location: found.label }));
+                          }
+                        }}
                         value={formData.contact_number}
                         onChange={handlePhoneChange}
                         placeholder="Contact Number*"
@@ -530,7 +640,7 @@ const AboutUs = () => {
                     <div className="recaptcha-wrapper">
                       <div className="recaptcha-container">
                         <ReCAPTCHA
-                          sitekey="6LdEkZoqAAAAAPn6MpmkLFjte5HUZlw2n6fctOKR"
+                          sitekey={RECAPTCHA_SITE_KEY}
                           onChange={handleCaptchaChange}
                         />
                       </div>
@@ -586,9 +696,16 @@ const AboutUs = () => {
                       <div>
                         <PhoneInput
                           international
-                          defaultCountry={selectedCountry?.value}
+                          country={selectedCountry?.value}
+                          onCountryChange={(country) => {
+                            const found = countries.find(c => c.value === country);
+                            if (found) {
+                              setSelectedCountry(found);
+                              setFormData(prev => ({ ...prev, location: found.label }));
+                            }
+                          }}
                           value={careerFormData.phone_number}
-                          onChange={(value) => setCareerFormData(prev => ({ ...prev, phone_number: value }))}
+                          onChange={handleCareerPhoneChange}
                           placeholder="Phone Number*"
                           className={`w-full border-b p-2 text-lg ${careerFormErrors.phone_number ? "border-red-600" : "border-gray-500"}`}
                         />
@@ -601,8 +718,9 @@ const AboutUs = () => {
                           placeholder="Reference Name"
                           value={careerFormData.reference_name}
                           onChange={handleCareerChange}
-                          className="w-full border-b p-2 text-lg border-gray-500"
+                          className={`w-full border-b p-2 text-lg ${careerFormErrors.reference_name ? "border-red-600" : "border-gray-500"}`}
                         />
+                        {careerFormErrors.reference_name && <p className="text-red-600 text-xs mt-1">{careerFormErrors.reference_name}</p>}
                       </div>
                     </div>
 

@@ -287,7 +287,16 @@ const Home = () => {
     pauseOnHover: false,
     pauseOnDotsHover: false,
   };
-  const isMobileOrTablet = typeof window !== 'undefined' && window.innerWidth <= 1024;
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobileOrTablet(window.innerWidth <= 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
 
   const slides = [
