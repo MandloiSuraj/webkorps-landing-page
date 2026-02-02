@@ -375,12 +375,12 @@ export default function JoinUsDetails() {
                     className={`shadow h-[48px] text-[14px] appearance-none border-[1px] border-b-4  rounded w-full py-2 px-3 text-gray-700 focus:outline-none ${errors.phone_number ? "border-red-500" : "border-black"
                       }`}
                     id="phone_number"
-                    type="number"
+                    type="tel"
                     placeholder="Enter your phone number"
                     name="phone_number"
                     value={formData.phone_number}
                     onChange={(e) => {
-                      const value = e.target.value.replace(/\D/g, "");
+                      const value = e.target.value.replace(/\D/g, "").slice(0, 10);
                       handleChange({ target: { name: "phone_number", value } });
                     }}
                   />

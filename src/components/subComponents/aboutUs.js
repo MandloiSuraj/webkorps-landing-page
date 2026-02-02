@@ -83,24 +83,36 @@ const AboutUs = () => {
   const [careerFormErrors, setCareerFormErrors] = useState({});
 
   const handlePhoneChange = (value) => {
-    if (value) {
-      const digitsOnly = value.replace(/\D/g, '');
-      // Allow up to 15 digits total (country code + national)
-      if (digitsOnly.length > 15) {
-        return;
+    if (!value) {
+      setFormData((prev) => ({ ...prev, contact_number: "" }));
+      setErrors((prev) => ({ ...prev, contact_number: 'Contact Number is required.' }));
+      return;
+    }
+
+    let finalValue = value;
+    const phoneNumber = parsePhoneNumber(value);
+
+    if (phoneNumber) {
+      const national = phoneNumber.nationalNumber;
+      if (national.length > 10) {
+        finalValue = `+${phoneNumber.countryCallingCode}${national.slice(0, 10)}`;
+      }
+    } else {
+      // Fallback for values that aren't yet valid enough to parse
+      const digits = value.replace(/\D/g, '');
+      if (digits.length > 15) {
+        finalValue = value.slice(0, 15);
       }
     }
-    setFormData((prev) => ({ ...prev, contact_number: value }));
 
-    if (value) {
-      // Use the library's validation which validates based on country code
-      if (!isValidPhoneNumber(value)) {
+    setFormData((prev) => ({ ...prev, contact_number: finalValue }));
+
+    if (finalValue) {
+      if (!isValidPhoneNumber(finalValue)) {
         setErrors((prev) => ({ ...prev, contact_number: 'Please enter a valid phone number for the selected country.' }));
       } else {
         setErrors((prev) => ({ ...prev, contact_number: '' }));
       }
-    } else {
-      setErrors((prev) => ({ ...prev, contact_number: 'Contact Number is required.' }));
     }
   };
   const [errors, setErrors] = useState({});
@@ -138,8 +150,9 @@ const AboutUs = () => {
 
         if (userCountry) {
           setSelectedCountry(userCountry);
-          setFormData((prev) => ({ ...prev, location: userCountry?.label }))
-
+          if (activeTab === 'experts') {
+            setFormData((prev) => ({ ...prev, location: userCountry?.label }))
+          }
         }
       });
     } else {
@@ -243,24 +256,36 @@ const AboutUs = () => {
   };
 
   const handleCareerPhoneChange = (value) => {
-    if (value) {
-      const digitsOnly = value.replace(/\D/g, '');
-      // Allow up to 15 digits total (country code + national)
-      if (digitsOnly.length > 15) {
-        return;
+    if (!value) {
+      setCareerFormData((prev) => ({ ...prev, phone_number: "" }));
+      setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Phone number is required' }));
+      return;
+    }
+
+    let finalValue = value;
+    const phoneNumber = parsePhoneNumber(value);
+
+    if (phoneNumber) {
+      const national = phoneNumber.nationalNumber;
+      if (national.length > 10) {
+        finalValue = `+${phoneNumber.countryCallingCode}${national.slice(0, 10)}`;
+      }
+    } else {
+      // Fallback for incomplete numbers
+      const digits = value.replace(/\D/g, '');
+      if (digits.length > 15) {
+        finalValue = value.slice(0, 15);
       }
     }
-    setCareerFormData((prev) => ({ ...prev, phone_number: value }));
 
-    if (value) {
-      // Use the library's validation which validates based on country code
-      if (!isValidPhoneNumber(value)) {
+    setCareerFormData((prev) => ({ ...prev, phone_number: finalValue }));
+
+    if (finalValue) {
+      if (!isValidPhoneNumber(finalValue)) {
         setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Please enter a valid phone number for the selected country.' }));
       } else {
         setCareerFormErrors((prev) => ({ ...prev, phone_number: '' }));
       }
-    } else {
-      setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Phone number is required' }));
     }
   };
 
@@ -590,6 +615,7 @@ const AboutUs = () => {
                         onChange={handlePhoneChange}
                         placeholder="Contact Number*"
                         className="w-full border-b p-2 text-lg border-gray-500"
+                        maxLength={16}
                         required
                       />
                       {errors.contact_number && <p className="text-red-600 text-xs">{errors.contact_number}</p>}
@@ -675,13 +701,13 @@ const AboutUs = () => {
                             const found = countries.find(c => c.value === country);
                             if (found) {
                               setSelectedCountry(found);
-                              setFormData(prev => ({ ...prev, location: found.label }));
                             }
                           }}
                           value={careerFormData.phone_number}
                           onChange={handleCareerPhoneChange}
                           placeholder="Phone Number*"
                           className={`w-full border-b p-2 text-lg ${careerFormErrors.phone_number ? "border-red-600" : "border-gray-500"}`}
+                          maxLength={16}
                         />
                         {careerFormErrors.phone_number && <p className="text-red-600 text-xs mt-1">{careerFormErrors.phone_number}</p>}
                       </div>
