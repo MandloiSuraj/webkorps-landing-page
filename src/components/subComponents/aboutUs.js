@@ -93,21 +93,11 @@ const AboutUs = () => {
     setFormData((prev) => ({ ...prev, contact_number: value }));
 
     if (value) {
-      const phoneNumber = parsePhoneNumber(value);
-      if (phoneNumber) {
-        // If the number is valid but not of the preferred length, or just invalid
-        if (!isValidPhoneNumber(value)) {
-          // We show error only if it's definitely wrong or too long
-          // But to meet user's "10 digit" preference:
-          const national = phoneNumber.nationalNumber;
-          if (national.length > 10) {
-            setErrors((prev) => ({ ...prev, contact_number: 'Contact Number cannot exceed 10 digits.' }));
-          } else {
-            setErrors((prev) => ({ ...prev, contact_number: '' }));
-          }
-        } else {
-          setErrors((prev) => ({ ...prev, contact_number: '' }));
-        }
+      // Use the library's validation which validates based on country code
+      if (!isValidPhoneNumber(value)) {
+        setErrors((prev) => ({ ...prev, contact_number: 'Please enter a valid phone number for the selected country.' }));
+      } else {
+        setErrors((prev) => ({ ...prev, contact_number: '' }));
       }
     } else {
       setErrors((prev) => ({ ...prev, contact_number: 'Contact Number is required.' }));
@@ -185,15 +175,10 @@ const AboutUs = () => {
       return;
     }
 
-    // Additional strict check for phone number length and validity on submit
+    // Additional strict check for phone number validity on submit
     if (formData.contact_number) {
       if (!isValidPhoneNumber(formData.contact_number)) {
         setErrors((prev) => ({ ...prev, contact_number: 'Please enter a valid phone number for the selected country.' }));
-        return;
-      }
-      const phoneNumber = parsePhoneNumber(formData.contact_number);
-      if (phoneNumber && phoneNumber.nationalNumber.length !== 10) {
-        setErrors((prev) => ({ ...prev, contact_number: 'Contact Number must be exactly 10 digits.' }));
         return;
       }
     }
@@ -268,18 +253,11 @@ const AboutUs = () => {
     setCareerFormData((prev) => ({ ...prev, phone_number: value }));
 
     if (value) {
-      const phoneNumber = parsePhoneNumber(value);
-      if (phoneNumber) {
-        if (!isValidPhoneNumber(value)) {
-          const national = phoneNumber.nationalNumber;
-          if (national.length > 10) {
-            setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Phone number cannot exceed 10 digits' }));
-          } else {
-            setCareerFormErrors((prev) => ({ ...prev, phone_number: '' }));
-          }
-        } else {
-          setCareerFormErrors((prev) => ({ ...prev, phone_number: '' }));
-        }
+      // Use the library's validation which validates based on country code
+      if (!isValidPhoneNumber(value)) {
+        setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Please enter a valid phone number for the selected country.' }));
+      } else {
+        setCareerFormErrors((prev) => ({ ...prev, phone_number: '' }));
       }
     } else {
       setCareerFormErrors((prev) => ({ ...prev, phone_number: 'Phone number is required' }));
@@ -288,7 +266,7 @@ const AboutUs = () => {
 
   const validateCareerForm = () => {
     const errors = {};
-    const { full_name, email, phone_number, gender, resume, declaration } = careerFormData;
+    const { full_name, email, phone_number, reference_name, gender, resume, declaration } = careerFormData;
 
     if (!full_name.trim()) {
       errors.full_name = 'Name is required';
@@ -304,14 +282,8 @@ const AboutUs = () => {
 
     if (!phone_number) {
       errors.phone_number = 'Phone number is required';
-    } else {
-      if (!isValidPhoneNumber(phone_number)) {
-        errors.phone_number = 'Please enter a valid phone number';
-      }
-      const phoneNumber = parsePhoneNumber(phone_number);
-      if (phoneNumber && phoneNumber.nationalNumber.length !== 10) {
-        errors.phone_number = 'Phone number must be exactly 10 digits';
-      }
+    } else if (!isValidPhoneNumber(phone_number)) {
+      errors.phone_number = 'Please enter a valid phone number for the selected country';
     }
 
     if (!gender) {
@@ -395,8 +367,8 @@ const AboutUs = () => {
       case 'name':
         if (!trimmedValue) {
           errorMessage = 'Name is required.';
-        } else if (!/^[A-Za-z\s]+$/.test(trimmedValue)) {
-          errorMessage = 'Name can only contain letters and spaces.';
+        } else if (!/^[A-Za-z0-9\s]+$/.test(trimmedValue)) {
+          errorMessage = 'Name can only contain letters, numbers, and spaces.';
         }
         break;
       case 'email':
@@ -426,7 +398,7 @@ const AboutUs = () => {
         break;
       case 'company':
         if (trimmedValue && !/^[A-Za-z0-9\s.\-&]+$/.test(trimmedValue)) {
-          errorMessage = 'Company name can only contain letters, numbers, spaces, and . - &';
+          errorMessage = 'Company name can contain letters, numbers, spaces, and special characters';
         }
         break;
       case 'message':
@@ -500,7 +472,7 @@ const AboutUs = () => {
               </p>
             </motion.div>
 
-            <div className="relative z-20 w-full max-w-lg mx-auto rounded-2xl border border-gray-300 shadow-custom-lg bg-white p-6">
+            <div className="relative z-20 w-full xl:w-[600px] ipad-pro:w-[600px] flex-shrink-0 mx-auto xl:mx-0 ipad-pro:mx-0 rounded-2xl border border-gray-300 shadow-custom-lg bg-white p-6">
               {/* Tabs */}
               <div className="flex justify-evenly border-b  border-gray-200 mb-4">
                 <button
@@ -605,6 +577,7 @@ const AboutUs = () => {
                     <div>
                       <PhoneInput
                         international
+                        defaultCountry="IN"
                         country={selectedCountry?.value}
                         onCountryChange={(country) => {
                           const found = countries.find(c => c.value === country);
@@ -696,6 +669,7 @@ const AboutUs = () => {
                       <div>
                         <PhoneInput
                           international
+                          defaultCountry="IN"
                           country={selectedCountry?.value}
                           onCountryChange={(country) => {
                             const found = countries.find(c => c.value === country);

@@ -22,19 +22,21 @@ const reviews = [
 // Custom Arrow Components
 const PrevArrow = ({ onClick }) => (
     <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10"
+        className="absolute -left-2 md:left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100 transition-colors"
         onClick={onClick}
+        aria-label="Previous review"
     >
-        <FaChevronLeft className="text-gray-600" />
+        <FaChevronLeft className="text-gray-600 text-sm md:text-base" />
     </button>
 );
 
 const NextArrow = ({ onClick }) => (
     <button
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10"
+        className="absolute -right-2 md:right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100 transition-colors"
         onClick={onClick}
+        aria-label="Next review"
     >
-        <FaChevronRight className="text-gray-600" />
+        <FaChevronRight className="text-gray-600 text-sm md:text-base" />
     </button>
 );
 
@@ -56,8 +58,8 @@ const ReviewSlider = () => {
     };
 
     return (
-        <div className=" py-[4rem]  bg-white font-inter  relative  overflow-hidden">
-            <div className="Clients  w-auto items-center justify-center text-center lg:text-left  mx-[7%] md:mx-[7%] xl:mx-[50px] ipad-pro:mx-[50px] justify-center  shadow-custom-lg rounded-[20px] bg-white px-[20px] py-[3rem]">
+        <div className=" py-[2rem] md:py-[4rem]  bg-white font-inter  relative  overflow-hidden">
+            <div className="Clients  w-auto items-center justify-center text-center lg:text-left  mx-[4%] md:mx-[7%] xl:mx-[50px] ipad-pro:mx-[50px] justify-center  shadow-custom-lg rounded-[20px] bg-white px-4 md:px-[20px] py-[2rem] md:py-[3rem]">
                 <div className="w-full text-center mb-[30px]" data-aos="fade-left">
                     <h2 className=" font-bold text-[1.5625rem] xl:text-[2.1875rem] ipad-pro:text-[1.875rem] md:text-[2.1875rem] leading-[2.45rem] text-[#061C3D]">
                         Real Stories, Real Experiences - Life at Webkorps in Their Words
@@ -78,7 +80,7 @@ const ReviewSlider = () => {
                                     loading="lazy"
                                     src={image}
                                     alt={`employee review`}
-                                    className="w-[370px] h-[240px]  rounded-lg"
+                                    className="w-full max-w-[370px] h-auto aspect-[370/240] object-cover rounded-lg"
                                 />
                             </div>
 

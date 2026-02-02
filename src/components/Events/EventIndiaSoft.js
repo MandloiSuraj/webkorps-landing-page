@@ -252,7 +252,7 @@ function EventIdiaSoft() {
                                     href='https://calendly.com/webkorpsservices/indiasoft'
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg  w-[220px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
+                                    className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full whitespace-nowrap shrink-0 text-base text-center md:text-lg  w-[220px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
                                 >
 
                                     Schedule A Meeting
@@ -337,7 +337,7 @@ function EventIdiaSoft() {
                                 href='https://calendly.com/webkorpsservices/indiasoft'
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
+                                className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full whitespace-nowrap shrink-0 text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
                             >
 
                                 Schedule A Meeting
@@ -443,13 +443,13 @@ function EventIdiaSoft() {
 
             </div>
             {/* ready with us  */}
-            <div className='bg-gradient-to-r from-[#020609] via-[#1887C9] to-[#020609] xl:h-[235px] md:h-[150px] h-[195px] ipad-pro:h-[195px] rounded-[20px] mx-[10px] content-center'>
+            <div className='bg-gradient-to-r from-[#020609] via-[#1887C9] to-[#020609] min-h-[235px] md:min-h-[150px] xl:min-h-[235px] ipad-pro:min-h-[195px] rounded-[20px] mx-[4%] md:mx-[7%] xl:mx-[50px] p-6 content-center'>
                 <div className="flex flex-col md:flex-row ipad-pro:flex-row xl:flex-row items-center align-center justify-center md:justify-center ipad-pro:items-center xl:justify-between xl:px-[80px] ipad-pro:justify-center gap-6 md:gap-9 xl:gap-9 ipad-pro:gap-6 sm:flex-col">
                     <div>
-                        <p className=" text-[#FFFFFF] font-bold text-[19px] leading-[25px] text-center xl:text-left md:text-[25px] md:leading-[30px] xl:text-[37px] ipad-pro:text-[30px] ipad-pro:leading-[46px] leading-[104px] xl:leading-[50px] ipad-pro:w-[670px] xl:w-[839px] xxl:w-[839px] md:w-[500px] w-[300px]">
+                        <p className=" text-[#FFFFFF] font-bold text-[16px] leading-[22px] text-center xl:text-left md:text-[25px] md:leading-[30px] xl:text-[28px] ipad-pro:text-[26px] ipad-pro:leading-[36px] xl:leading-[36px] ipad-pro:max-w-[670px] xl:max-w-[839px] xxl:max-w-[900px] md:max-w-[500px] w-full">
                             Schedule a meeting with our experts to explore innovative solutions and opportunities.
                         </p>
-                        <p className=' text-[#FFFFFF] font-bold text-[19px] text-center xl:text-left md:text-[25px] md:leading-[30px] xl:text-[37px] ipad-pro:text-[30px] ipad-pro:leading-[46px] leading-[23px] xl:leading-[50px]'>
+                        <p className='mt-5 text-[#FFFFFF] font-bold text-[18px] text-center xl:text-left md:text-[25px] md:leading-[30px] xl:text-[37px] ipad-pro:text-[30px] ipad-pro:leading-[46px] leading-[23px] xl:leading-[50px]'>
                             Let’s Connect at INDIASOFT 2025!
                         </p>
                     </div>
@@ -458,7 +458,7 @@ function EventIdiaSoft() {
                         href='https://calendly.com/webkorpsservices/indiasoft'
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg w-[75%] md:w-[233px] xl:w-[219px] ipad-pro:w-[233px] h-[56px] bg-[#1887C9]"
+                        className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg w-[233px] md:w-[233px] xl:w-[219px] ipad-pro:w-[233px] h-[56px] bg-[#1887C9] whitespace-nowrap shrink-0"
                     >
                         Schedule A Meeting
                         <img width="800" height="600" sizes="(max-width: 640px) 100vw, 
@@ -511,7 +511,7 @@ function EventIdiaSoft() {
                                 href='https://calendly.com/webkorpsservices/indiasoft'
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
+                                className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full whitespace-nowrap shrink-0 text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
                             >
 
                                 Schedule A Meeting
@@ -572,7 +572,7 @@ function EventIdiaSoft() {
                                 href='https://calendly.com/webkorpsservices/indiasoft'
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
+                                className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9] whitespace-nowrap shrink-0"
                             >
 
                                 Schedule A Meeting
@@ -664,10 +664,10 @@ function EventIdiaSoft() {
 
                 </div>
             </div>
-            <div className='bg-gradient-to-r from-[#020609] via-[#1887C9] to-[#020609] h-[195px] md:h-[195px] xl:h-[235px] ipad-pro:h-[195px] rounded-[20px]  mx-[10px]  content-center'>
+            <div className='bg-gradient-to-r from-[#020609] via-[#1887C9] to-[#020609] min-h-[195px] md:min-h-[195px] xl:min-h-[235px] ipad-pro:min-h-[195px] rounded-[20px] mx-[4%] md:mx-[7%] xl:mx-[50px] my-12 p-6 content-center'>
                 <div className="flex flex-col md:flex-row ipad-pro:flex-row xl:flex-row items-center align-center justify-center  md:justify-center ipad-pro:items-center  xl:justify-between xl:px-[80px] ipad-pro:justify-center gap-6  md:gap-9 xl:gap-9 ipad-pro:gap-6 sm:flex-col ">
                     <div>
-                        <p className=" text-[#FFFFFF] font-bold text-[22px] text-center  xl:text-left md:text-[25px] md:leading-[30px] xl:text-[37px]  ipad-pro:text-[30px]  ipad-pro:leading-[46px] leading-[25px] xl:leading-[50px] ipad-pro:w-[670px] xl:w-[839px] xxl:w-[839px] md:w-[500px] w-[300px]"
+                        <p className=" text-[#FFFFFF] font-bold text-[18px] leading-[26px] text-center  xl:text-left md:text-[25px] md:leading-[30px] xl:text-[28px]  ipad-pro:text-[26px]  ipad-pro:leading-[30px] xl:leading-[36px] ipad-pro:max-w-[670px] xl:max-w-[839px] xxl:max-w-[839px] md:max-w-[500px] w-full"
                         >Schedule a meeting and explore cutting-edge solutions designed for your success.</p>
                     </div>
 
@@ -677,7 +677,7 @@ function EventIdiaSoft() {
                         href='https://calendly.com/webkorpsservices/indiasoft'
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9]"
+                        className="flex items-center align-center justify-center text-white focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-base text-center md:text-lg  w-[233px] md:w-[233px] xl:w-[233px] ipad-pro:w-[233px]  h-[56px] bg-[#1887C9] whitespace-nowrap shrink-0"
                     >
 
                         Schedule A Meeting

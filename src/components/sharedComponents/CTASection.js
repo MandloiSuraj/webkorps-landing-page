@@ -7,9 +7,7 @@ const CTASection = ({ title, description, buttonText, bgColor, link, ctaImage, t
   return (
     <div className={`${bgColor} py-[4rem]`}>
       <div className="relative mx-[7%] md:mx-[7%] xl:mx-[50px] ipad-pro:mx-[50px] rounded-[30px] overflow-hidden">
-        <div className="absolute inset-0 block md:hidden bg-gradient-to-br from-blue-500 to-cyan-400 rounded-[30px] z-0"></div>
-
-        {/* 🖼️ Image Background for Desktop */}
+        {/* 🖼️ Image Background for All Screens */}
         <img
           width="800"
           height="600"
@@ -17,11 +15,11 @@ const CTASection = ({ title, description, buttonText, bgColor, link, ctaImage, t
           loading="lazy"
           src={ctaImage?.src || ctaImage}
           alt="Website CTA"
-          className="absolute inset-0 w-full h-full rounded-[30px] z-0 hidden md:block"
+          className="absolute inset-0 w-full h-full rounded-[30px] z-0 object-cover"
         />
 
         {/* Text Content Overlay */}
-        <div className={`relative inset-0 flex flex-col md:flex-row md:w-full w-[70%] items-start md:items-center justify-start px-[10px] md:px-[30px] pt-4 pb-4 md:pt-[3rem] md:pb-[3rem] ${!textColor ? 'text-white' : 'text-[#061C3D]'}`}>
+        <div className={`relative inset-0 flex flex-col md:flex-row md:w-full w-full items-start md:items-center justify-start px-[20px] md:px-[30px] pt-8 pb-8 md:pt-[3rem] md:pb-[3rem] ${!textColor ? 'text-white' : 'text-[#061C3D]'}`}>
           <div className="flex md:justify-center justify-start flex-col  text-left md:text-left">
             <h2
               className="text-[1.25rem] md:text-[1.5625rem] xl:text-[2.1875rem] ipad-pro:text-[1.875rem] leading-[2rem] md:leading-[2.45rem] font-bold w-full md:w-[70%]"
